@@ -8,3 +8,9 @@ export const colors = {
   lightGrey: "#D2CDCD",
   red: "#E01515",
 };
+
+export const breakpoints = {
+  mobile: 480,
+  tablet: 768,
+  desktop: 1200,
+};
