@@ -7,7 +7,7 @@ export const respondFrom = (breakpoints: number) => {
 
 export const respondTo = (breakpoints: number) => {
   return (style: any) =>
-    `@media screen and (max-width: ${breakpoints}px)  { ${style} }`;
+    `@media screen and (max-width: ${breakpoints - 1}px)  { ${style} }`;
 };
 
 export const baseShadow = css`
