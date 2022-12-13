@@ -1,11 +1,12 @@
 import { GlobalStyles } from "./styles/GlobalStyles";
 
-import PageContentContainer from "./components/ui/PageContentContainer";
+import Navigation from "./components/layout/Navigation";
 
 function App() {
   return (
     <>
       <GlobalStyles />
+      <Navigation />
     </>
   );
 }
