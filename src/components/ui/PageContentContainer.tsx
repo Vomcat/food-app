@@ -8,6 +8,7 @@ type Props = {
 
 const Wrapper = styled.div`
   padding: 0 16px;
+  overflow: hidden;
 
   ${respondFrom(breakpoints.desktop)`
       max-width: 1232px;
