@@ -57,7 +57,8 @@ body{
   font-family: ${fonts.primary};
   line-height: 1;
   color: ${colors.dark};
-  background-color: ${colors.white}
+  background-color: ${colors.white};
+  padding-top: 61px;
 }
 
 h1,

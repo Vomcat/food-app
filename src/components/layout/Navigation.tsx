@@ -10,9 +10,13 @@ import ProfileIcon from "../../assets/svg/Profile-icon.svg";
 const NavigationMain = styled.nav`
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  height: 61px;
   background-color: ${colors.white};
   ${baseShadow};
   padding: 13px 0;
+  z-index: 999;
 `;
 
 const NavigationWrapper = styled.div`
