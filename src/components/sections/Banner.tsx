@@ -43,31 +43,31 @@ const BannerMainWrapper = styled.div`
 const BannerHeading = styled.div`
   grid-area: heading;
   width: 100%;
+`;
 
-  h1 {
-    font-size: 36px;
+const Title = styled.h1`
+  font-size: 36px;
 
-    ${respondFrom(breakpoints.tablet)`
+  ${respondFrom(breakpoints.tablet)`
       font-size: 80px;
     `}
 
-    ${respondFrom(breakpoints.desktop)`
+  ${respondFrom(breakpoints.desktop)`
       font-size: 110px;
     `}
 
     span {
-      color: ${colors.primary};
-    }
+    color: ${colors.primary};
   }
+`;
 
-  p {
-    font-size: 24px;
-    font-family: ${fonts.secondaryBold};
+const Subtitle = styled.p`
+  font-size: 24px;
+  font-family: ${fonts.secondaryBold};
 
-    ${respondFrom(breakpoints.desktop)`
-      font-size: 48px;
-    `};
-  }
+  ${respondFrom(breakpoints.desktop)`
+    font-size: 48px;
+  `};
 `;
 
 const BannerImage = styled.div`
@@ -89,10 +89,10 @@ const Banner = () => {
       <PageContentContainer>
         <BannerMainWrapper>
           <BannerHeading>
-            <p>Welcome to</p>
-            <h1>
+            <Subtitle>Welcome to</Subtitle>
+            <Title>
               <span>Papu</span> Store
-            </h1>
+            </Title>
           </BannerHeading>
           <BannerImage>
             <picture>
