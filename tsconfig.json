@@ -18,5 +18,5 @@
     "jsx": "react-jsx",
     "types": ["node", "jest"]
   },
-  "include": ["./src/**/*"]
+  "include": ["src"]
 }

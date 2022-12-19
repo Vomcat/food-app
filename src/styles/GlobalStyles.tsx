@@ -2,10 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 import { colors, dimensions, fonts } from "./index";
 
-import montserrat from "../assets/fonts/montserrat/Montserrat-Medium.ttf";
-import montserratBold from "../assets/fonts/montserrat/Montserrat-Bold.ttf";
-import roboto from "../assets/fonts/roboto/Roboto-Medium.ttf";
-import robotoItalic from "../assets/fonts/roboto/Roboto-Italic.ttf";
+import montserrat from "assets/fonts/montserrat/Montserrat-Medium.ttf";
+import montserratBold from "assets/fonts/montserrat/Montserrat-Bold.ttf";
+import roboto from "assets/fonts/roboto/Roboto-Medium.ttf";
+import robotoItalic from "assets/fonts/roboto/Roboto-Italic.ttf";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
