@@ -16,10 +16,10 @@ import Twitter from "assets/svg/Twitter.svg";
 const FooterMain = styled.footer`
   width: 100%;
   background-color: ${colors.white};
-  padding: 20px 0;
+  padding: ${dimensions.spacing.md2}px 0;
 
   ${respondFrom(breakpoints.desktop)`
-        padding: 33px 0;
+        padding: ${dimensions.spacing.md3}px 0;
     `}
 `;
 
@@ -34,7 +34,7 @@ const FooterWrapper = styled.div`
     `}
 
   ${respondTo(breakpoints.tablet)`
-    gap: 20px;
+    gap: ${dimensions.spacing.md}px;
     `}
 
   p {
@@ -45,7 +45,7 @@ const FooterWrapper = styled.div`
 
 const FooterIcons = styled.div`
   display: flex;
-  gap: 13px;
+  gap: ${dimensions.spacing.sm}px;
   cursor: pointer;
 
   img {

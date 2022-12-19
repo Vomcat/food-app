@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   ${respondFrom(breakpoints.desktop)`
       max-width: ${dimensions.pageContentWidth}px;
       margin-inline: auto;
-      color: red;
     `}
 `;
 

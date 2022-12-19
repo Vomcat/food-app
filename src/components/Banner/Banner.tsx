@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import PageContentContainer from "../ui/PageContentContainer";
+import PageContentContainer from "components/ui/PageContentContainer";
 
 import {
   breakpoints,
@@ -8,16 +8,17 @@ import {
   fonts,
   respondFrom,
   respondTo,
-} from "../../styles";
+  dimensions
+} from "styles";
 
-import FoodImage from "../../assets/images/BannerImage.png";
-import FoodImageMobile from "../../assets/images/BannerImageMobile.png";
+import FoodImage from "assets/images/BannerImage.png";
+import FoodImageMobile from "assets/images/BannerImageMobile.png";
 
 const BannerMain = styled.section`
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding: 22px 0;
+  padding: ${dimensions.spacing.md}px 0;
 
   &::before {
     content: "";
@@ -37,7 +38,7 @@ const BannerMainWrapper = styled.div`
   display: grid;
   grid: "heading image" 1fr / 1.5fr 1fr;
   align-items: center;
-  gap: 10px;
+  gap: ${dimensions.spacing.sm}px;
 `;
 
 const BannerHeading = styled.div`

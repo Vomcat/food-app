@@ -13,10 +13,11 @@ const NavigationMain = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  height: 61px;
+  height: 50px;
   background-color: ${colors.white};
   ${baseShadow};
   padding: ${dimensions.spacing.sm}px 0;
+  z-index: 999;
 `;
 
 const NavigationWrapper = styled.div`

@@ -58,7 +58,7 @@ body{
   line-height: 1;
   color: ${colors.dark};
   background-color: ${colors.white};
-  padding-top: 61px;
+  padding-top: 50px;
 }
 
 h1,
