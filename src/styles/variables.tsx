@@ -33,4 +33,12 @@ export const dimensions = {
     larger: 110,
     heading: 24,
   },
+  spacing: {
+    sm: 8,
+    md: 16,
+    md2: 24,
+    md3: 32,
+    lg: 40
+  },
+  pageContentWidth: 1232,
 };

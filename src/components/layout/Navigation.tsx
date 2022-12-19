@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { baseShadow, colors } from "../../styles";
 
-import PageContentContainer from "../ui/PageContentContainer";
+import { baseShadow, colors, dimensions } from "styles";
 
-import LogoImage from "../../assets/images/Logo.png";
-import CartIcon from "../../assets/svg/Cart-icon.svg";
-import ProfileIcon from "../../assets/svg/Profile-icon.svg";
+import PageContentContainer from "components/ui/PageContentContainer";
+
+import LogoImage from "assets/images/Logo.png";
+import CartIcon from "assets/svg/Cart-icon.svg";
+import ProfileIcon from "assets/svg/Profile-icon.svg";
 
 const NavigationMain = styled.nav`
   width: 100%;
@@ -15,8 +16,7 @@ const NavigationMain = styled.nav`
   height: 61px;
   background-color: ${colors.white};
   ${baseShadow};
-  padding: 13px 0;
-  z-index: 999;
+  padding: ${dimensions.spacing.sm}px 0;
 `;
 
 const NavigationWrapper = styled.div`
