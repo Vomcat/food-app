@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { respondFrom, breakpoints, dimensions } from "../../styles";
+import { respondFrom, breakpoints, dimensions } from "styles";
 
 type Props = {
   children: React.ReactNode;
