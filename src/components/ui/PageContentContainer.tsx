@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
-import { respondFrom, breakpoints } from "../../styles";
+import { respondFrom, breakpoints, dimensions } from "../../styles";
 
 type Props = {
   children: React.ReactNode;
 };
 
 const Wrapper = styled.div`
-  padding: 0 16px;
+  padding: 0 ${dimensions.spacing.md}px;
 
   ${respondFrom(breakpoints.desktop)`
-      max-width: 1232px;
+      max-width: ${dimensions.pageContentWidth}px;
       margin-inline: auto;
+      color: red;
     `}
 `;
 
