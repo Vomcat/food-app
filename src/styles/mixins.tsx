@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export const respondFrom = (breakpoints: number) => {
   return (literals: TemplateStringsArray, ...placeholders: any[] ) =>
-    css`@media screen and (min-width: ${breakpoints}px)  { ${css(literals, placeholders)} }`;
+    css`@media screen and (min-width: ${breakpoints}px)  { ${css(literals, ...placeholders)} }`;
 };
 
 export const respondTo = (breakpoints: number) => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import PageContentContainer from "components/ui/PageContentContainer";
+import PageContentContainer from "components/Ui/PageContentContainer";
 
 import {
   breakpoints,

@@ -38,7 +38,10 @@ export const dimensions = {
     md: 16,
     md2: 24,
     md3: 32,
-    lg: 40
+    lg: 40,
+    lg2:48,
+    lg3: 56,
+    lgmax: 104,
   },
   pageContentWidth: 1232,
 };

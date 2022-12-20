@@ -7,7 +7,7 @@ import {
   breakpoints,
 } from "styles";
 
-import PageContentContainer from "components/ui/PageContentContainer";
+import PageContentContainer from "components/Ui/PageContentContainer";
 
 import Facebook from "assets/svg/Facebook.svg";
 import Instagram from "assets/svg/Instagram.svg";

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { baseShadow, colors, dimensions } from "styles";
 
-import PageContentContainer from "components/ui/PageContentContainer";
+import PageContentContainer from "components/Ui/PageContentContainer";
 
 import LogoImage from "assets/images/Logo.png";
 import CartIcon from "assets/svg/Cart-icon.svg";

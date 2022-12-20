@@ -1,4 +1,4 @@
 {
-  "item": { "name": "test" },
+  "items": [{ "id":1,"name": "Mniam Mniam Food", "price" :"5" }, { "id":2,"name": "Mniam Mniam Food 22", "price" :"7" }],
   "order": {}
 }
