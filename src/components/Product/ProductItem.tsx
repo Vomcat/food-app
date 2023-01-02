@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
+import ButtonPlus from "components/Layout/ButtonPlus";
+
 import { colors, dimensions, fonts, respondFrom, breakpoints } from "styles";
+
+import { ProductItemElements } from "interfaces/Product";
 
 import ItemImg from "assets/images/item1.png"
 
@@ -12,10 +16,11 @@ const Item = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${dimensions.spacing.md2}px;
-    max-width: 300px;
+    
 
     ${respondFrom(breakpoints.desktop)`
-        max-width: 330px;
+        flex: 0 0 33.33333%;
+        max-width: 33%;
     `}
 `
 
@@ -33,12 +38,12 @@ const ItemPrice = styled.div`
 `
 
 
-const ProductItem =()=>{
+const ProductItem: React.FC<ProductItemElements> =({id,image, name, price})=>{
     return (
     <Item>
-        <ItemImage><img src={ItemImg} alt="elo"/></ItemImage>
-        <ItemTitle>Very deciusules mniam mniam food</ItemTitle>
-        <ItemPrice><ItemTitle>$5,90</ItemTitle><button>add</button></ItemPrice>
+        <ItemImage><img src={image} alt="elo"/></ItemImage>
+        <ItemTitle>{name}</ItemTitle>
+        <ItemPrice><ItemTitle>{price}</ItemTitle><ButtonPlus color="grey"/></ItemPrice>
     </Item>
     )
 }

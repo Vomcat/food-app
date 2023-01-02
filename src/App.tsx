@@ -5,6 +5,7 @@ import Footer from "components/Layout/Footer";
 import Banner from "components/Banner/Banner";
 import ProductItem from "components/Product/ProductItem";
 import ProductList from "components/Product/ProductList";
+import PageContentContainer from "components/Ui/PageContentContainer";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <GlobalStyles />
       <Navigation />
       <Banner />
-      <ProductList/>
+      <PageContentContainer><ProductList/></PageContentContainer>
+      
       <Footer />
     </>
   );
