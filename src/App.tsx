@@ -1,7 +1,7 @@
 import { GlobalStyles } from "styles/GlobalStyles";
 
-import Navigation from "components/Layout/Navigation";
-import Footer from "components/Layout/Footer";
+import Navigation from "components/layout/Navigation";
+import Footer from "components/layout/Footer";
 import Banner from "components/Banner/Banner";
 import ProductItem from "components/Product/ProductItem";
 import ProductList from "components/Product/ProductList";
@@ -13,8 +13,9 @@ function App() {
       <GlobalStyles />
       <Navigation />
       <Banner />
-      <PageContentContainer><ProductList/></PageContentContainer>
-      
+      <PageContentContainer>
+        <ProductList />
+      </PageContentContainer>
       <Footer />
     </>
   );
