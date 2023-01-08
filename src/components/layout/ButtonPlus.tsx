@@ -5,6 +5,8 @@ import { ButtonStyles } from "interfaces/Layout";
 import { colors } from "styles";
 
 import PlusIconWhite from "assets/images/plus.png";
+import PlusIconBlack from "assets/images/plusBlack.png";
+import MinusIconBlack from "assets/images/minus.png";
 
 const Button = styled.button<ButtonStyles>`
   position: relative;
@@ -19,14 +21,24 @@ const Button = styled.button<ButtonStyles>`
 
   &:hover {
     background-color: ${(props) =>
-      props.variant != "default" ? colors.dark : colors.primary};
+      props.variant != "default" ? colors.lightGrey : colors.primary};
   }
 `;
 
-const ButtonPlus: React.FC<ButtonStyles> = ({ variant = "default" }) => {
+const ButtonPlus: React.FC<ButtonStyles> = ({
+  variant = "default",
+  plusIcon = true,
+}) => {
   return (
     <Button variant={variant} type="button">
-      <img src={PlusIconWhite} alt="plus icon" />
+      {plusIcon ? (
+        <img
+          src={variant === "default" ? PlusIconWhite : PlusIconBlack}
+          alt="plus icon"
+        />
+      ) : (
+        <img src={MinusIconBlack} alt="minus icon" />
+      )}
     </Button>
   );
 };
