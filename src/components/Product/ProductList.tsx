@@ -29,12 +29,13 @@ const ProductList = () => {
   const [items, setItems] = useState<ProductItemElements[]>([]);
 
   const fetchData = async () => {
-    const response = await fetch(" http://localhost:3000/items");
-    if (!response.ok) {
+    try {
+      const response = await fetch(" http://localhost:3000/items");
+      const data = await response.json();
+      setItems(data);
+    } catch (err) {
       throw new Error("Something went wrong");
     }
-    const data = await response.json();
-    setItems(data);
   };
 
   useEffect(() => {
