@@ -5,6 +5,8 @@ import Item from "components/Product/ProductItem";
 
 import { respondFrom, breakpoints, dimensions } from "styles";
 
+import { ProductItemElements } from "interfaces/Product";
+
 const ProductListWrapper = styled.div`
   display: grid;
   align-items: center;
@@ -24,12 +26,19 @@ const ProductListWrapper = styled.div`
 `;
 
 const ProductList = () => {
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<ProductItemElements[]>([]);
+
+  const fetchData = async () => {
+    const response = await fetch(" http://localhost:3000/items");
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+    const data = await response.json();
+    setItems(data);
+  };
 
   useEffect(() => {
-    fetch(" http://localhost:3000/items")
-      .then((res) => res.json())
-      .then((result) => setItems(result));
+    fetchData();
   }, []);
 
   return (
@@ -38,9 +47,9 @@ const ProductList = () => {
         <Item
           key={item.id}
           id={item.id}
-          image={item.image}
           name={item.name}
           price={item.price}
+          image={item.image}
         />
       ))}
     </ProductListWrapper>
