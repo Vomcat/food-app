@@ -5,7 +5,7 @@ import Item from "components/Product/ProductItem";
 
 import { respondFrom, breakpoints, dimensions } from "styles";
 
-import { ProductItemElements } from "interfaces/Product";
+import { ProductItemProps } from "interfaces/Product";
 
 const ProductListWrapper = styled.div`
   display: grid;
@@ -26,7 +26,7 @@ const ProductListWrapper = styled.div`
 `;
 
 const ProductList = () => {
-  const [items, setItems] = useState<ProductItemElements[]>([]);
+  const [items, setItems] = useState<ProductItemProps[]>([]);
 
   const fetchData = async () => {
     try {
@@ -50,7 +50,7 @@ const ProductList = () => {
           id={item.id}
           name={item.name}
           price={item.price}
-          image={item.image}
+          imageURI={item.imageURI}
         />
       ))}
     </ProductListWrapper>

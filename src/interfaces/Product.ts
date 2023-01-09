@@ -1,6 +1,6 @@
-export interface ProductItemElements {
+export interface ProductItemProps {
   id: number;
-  image?: string;
+  imageURI: string;
   name: string;
   price: number;
 }

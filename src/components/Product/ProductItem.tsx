@@ -4,7 +4,7 @@ import ButtonPlus from "components/layout/ButtonPlus";
 
 import { colors, dimensions, fonts, respondFrom, breakpoints } from "styles";
 
-import { ProductItemElements } from "interfaces/Product";
+import { ProductItemProps } from "interfaces/Product";
 
 const Item = styled.div`
   text-align: center;
@@ -34,16 +34,16 @@ const ItemPrice = styled.div`
   margin-top: auto;
 `;
 
-const ProductItem: React.FC<ProductItemElements> = ({
+const ProductItem: React.FC<ProductItemProps> = ({
   id,
-  image,
+  imageURI,
   name,
   price,
 }) => {
   return (
     <Item>
       <ItemImage>
-        <img src={image} alt={name} />
+        <img src={imageURI} alt={name} />
       </ItemImage>
       <ItemTitle>{name}</ItemTitle>
       <ItemPrice>
