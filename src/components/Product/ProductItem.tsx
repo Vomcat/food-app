@@ -43,7 +43,7 @@ const ProductItem: React.FC<ProductItemElements> = ({
   return (
     <Item>
       <ItemImage>
-        <img src={image} alt="elo" />
+        <img src={image} alt={name} />
       </ItemImage>
       <ItemTitle>{name}</ItemTitle>
       <ItemPrice>
