@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import ProductList from "../ProductList";
+import ProductList from "components/Product/ProductList";
 
 const MOCK_DATA = [
   {
