@@ -6,6 +6,7 @@ import Banner from "components/Banner/Banner";
 import ProductItem from "components/Product/ProductItem";
 import ProductList from "components/Product/ProductList";
 import PageContentContainer from "components/Ui/PageContentContainer";
+import ProductSearchBar from "components/Product/ProductSearchBar";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navigation />
       <Banner />
       <PageContentContainer>
+        <ProductSearchBar />
         <ProductList />
       </PageContentContainer>
       <Footer />
