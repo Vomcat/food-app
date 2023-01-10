@@ -1,10 +1,29 @@
 {
   "items": [
-    { "id": 1, "image":"/assets/images/item1.png", "name": "Mniam Mniam Food", "price": 5 },
-    { "id": 2, "image":"/assets/images/item1.png", "name": "Rice with garlic chicken", "price": 4.20 },
-    { "id": 3,  "image":"/assets/images/item1.png","name": "Spicy noodle with shrimps", "price": 7 },
-    { "id": 4,  "image":"/assets/images/item1.png","name": "Potatoe with salad and grilled beef", "price": 7.5 }
-
+    {
+      "id": 1,
+      "imageURI": "/assets/images/item1.png",
+      "name": "Mniam Mniam Food",
+      "price": 5
+    },
+    {
+      "id": 2,
+      "imageURI": "/assets/images/item1.png",
+      "name": "Rice with garlic chicken",
+      "price": 4.2
+    },
+    {
+      "id": 3,
+      "imageURI": "/assets/images/item1.png",
+      "name": "Spicy noodle with shrimps",
+      "price": 7
+    },
+    {
+      "id": 4,
+      "imageURI": "/assets/images/item1.png",
+      "name": "Potatoe with salad and grilled beef",
+      "price": 7.5
+    }
   ],
   "order": {}
 }
