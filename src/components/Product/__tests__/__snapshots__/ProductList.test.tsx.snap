@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product List render test renders correctly 1`] = `
+<DocumentFragment>
+  .c4 {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  background-color: #95E1D3;
+  border-radius: 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.c4:hover {
+  background-color: #F38181;
+}
+
+.c1 {
+  text-align: center;
+  padding: 16px 32px 32px;
+  border: 1px solid #D2CDCD;
+  border-radius: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.c2 {
+  font-size: 20px;
+  font-family: Montserrat Bold,sans-serif;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.c0 {
+  display: grid;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  grid-template-columns: minmax(215px,320px);
+  gap: 40px;
+}
+
+@media screen and (min-width:768px) {
+  .c1 {
+    height: 100%;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .c0 {
+    grid-template-columns: repeat(2,minmax(215px,320px));
+    gap: 56px 104px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c0 {
+    grid-template-columns: repeat(3,minmax(215px,1fr));
+    gap: 56px 104px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class=""
+      >
+        <img
+          alt="Mniam Mniam Food"
+        />
+      </div>
+      <p
+        class="c2"
+      >
+        Mniam Mniam Food
+      </p>
+      <div
+        class="c3"
+      >
+        <p
+          class="c2"
+        >
+          5 $
+        </p>
+        <button
+          class="c4"
+          type="button"
+        >
+          <img
+            alt="plus icon"
+            src="plus.png"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class=""
+      >
+        <img
+          alt="Mniam Mniam Food as adsdasdasd"
+        />
+      </div>
+      <p
+        class="c2"
+      >
+        Mniam Mniam Food as adsdasdasd
+      </p>
+      <div
+        class="c3"
+      >
+        <p
+          class="c2"
+        >
+          5 $
+        </p>
+        <button
+          class="c4"
+          type="button"
+        >
+          <img
+            alt="plus icon"
+            src="plus.png"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
