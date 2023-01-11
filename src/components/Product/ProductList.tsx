@@ -13,6 +13,7 @@ const ProductListWrapper = styled.div`
   justify-content: center;
   grid-template-columns: minmax(215px, 320px);
   gap: ${dimensions.spacing.lg}px;
+  padding: 50px 0;
 
   ${respondFrom(breakpoints.tablet)`
         grid-template-columns: repeat(2,minmax(215px, 320px));
@@ -22,6 +23,7 @@ const ProductListWrapper = styled.div`
   ${respondFrom(breakpoints.desktop)`
         grid-template-columns: repeat(3,minmax(215px, 1fr));
         gap: ${dimensions.spacing.lg3}px ${dimensions.spacing.lgmax}px;
+        padding: 100px 0;
     `}
 `;
 

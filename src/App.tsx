@@ -1,21 +1,19 @@
+import { Route, Routes } from "react-router-dom";
+
 import { GlobalStyles } from "styles/GlobalStyles";
 
 import Navigation from "components/layout/Navigation";
 import Footer from "components/layout/Footer";
-import Banner from "components/Banner/Banner";
-import ProductItem from "components/Product/ProductItem";
-import ProductList from "components/Product/ProductList";
-import PageContentContainer from "components/Ui/PageContentContainer";
+import Homepage from "pages/Homepage";
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <Navigation />
-      <Banner />
-      <PageContentContainer>
-        <ProductList />
-      </PageContentContainer>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
       <Footer />
     </>
   );
