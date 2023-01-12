@@ -24,6 +24,6 @@ describe("ButtonPlus component", () => {
 
   test("button minus bg-color", () => {
     const tree = renderer.create(<ButtonPlus variant="grey" />).toJSON();
-    expect(tree).toHaveStyleRule("background-color", "#D2CDCD");
+    expect(tree).toHaveStyleRule("background-color", "#D9D9D9");
   });
 });
