@@ -18,8 +18,8 @@ const CartWrapper = styled.div<CartStyleProps>`
   flex-direction: column;
   gap: ${dimensions.spacing.md}px;
   ${(props) =>
-    props.variant != "menu" &&
-    `position: fixed; top: 50px; right:0; padding: 50px; width:500px; background-color: ${colors.white}; border-bottom-left-radius:17px; border-bottom-right-radius:17px;`}
+    props.variant === "menu" &&
+    `position: absolute; top: 42px; right:0; padding: 50px; width:500px; background-color: ${colors.white}; border-bottom-left-radius:17px; border-bottom-right-radius:17px;`}
 `;
 
 const HeaderWrapper = styled.div`

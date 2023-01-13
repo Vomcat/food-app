@@ -1,8 +1,10 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-import { baseShadow, colors, dimensions } from "styles";
-
 import PageContentContainer from "components/Ui/PageContentContainer";
+import Cart from "components/Cart/Cart";
+
+import { baseShadow, colors, dimensions } from "styles";
 
 import LogoImage from "assets/images/Logo.png";
 import CartIcon from "assets/svg/Cart-icon.svg";
@@ -21,6 +23,7 @@ const NavigationMain = styled.nav`
 `;
 
 const NavigationWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,6 +47,10 @@ const NavigationIcons = styled.div`
 `;
 
 const Navigation = () => {
+  const [isActiveCart, setIsActiveCart] = useState(false);
+
+  const handleMouseOver = () => {};
+
   return (
     <NavigationMain>
       <PageContentContainer>
@@ -55,8 +62,18 @@ const Navigation = () => {
           </NavigationLogo>
           <NavigationIcons>
             <img src={ProfileIcon} alt="Profile Icon" />
-            <img src={CartIcon} alt="Cart Icon" />
+            <img
+              src={CartIcon}
+              alt="Cart Icon"
+              onMouseOver={() => {
+                setIsActiveCart(!isActiveCart);
+              }}
+              onMouseOut={() => {
+                setIsActiveCart(!isActiveCart);
+              }}
+            />
           </NavigationIcons>
+          {isActiveCart && <Cart variant="menu" />}
         </NavigationWrapper>
       </PageContentContainer>
     </NavigationMain>
