@@ -7,7 +7,13 @@ import Cart from "components/Cart/Cart";
 
 import { RootState } from "store/store";
 
-import { baseShadow, colors, dimensions } from "styles";
+import {
+  baseShadow,
+  colors,
+  dimensions,
+  breakpoints,
+  respondFrom,
+} from "styles";
 
 import LogoImage from "assets/images/Logo.png";
 import CartIcon from "assets/svg/Cart-icon.svg";
@@ -40,13 +46,17 @@ const NavigationLogo = styled.div`
 
 const NavigationIcons = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${dimensions.spacing.sm}px;
   cursor: pointer;
 
   img {
     height: 20px;
     width: 20px;
   }
+
+  ${respondFrom(breakpoints.desktop)`
+      gap: ${dimensions.spacing.md}px;
+`}
 `;
 
 const Navigation = () => {
@@ -68,14 +78,14 @@ const Navigation = () => {
             </a>
           </NavigationLogo>
           <NavigationIcons>
-            <img src={ProfileIcon} alt="Profile Icon" />
             <img
-              src={CartIcon}
-              alt="Cart Icon"
+              src={ProfileIcon}
+              alt="Profile Icon"
               onClick={() => {
                 setIsActiveCart(!isActiveCart);
               }}
             />
+            <img src={CartIcon} alt="Cart Icon" />
           </NavigationIcons>
           {isActiveCart && <Cart variant="menu" items={cartItems} />}
         </NavigationWrapper>

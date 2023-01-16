@@ -54,19 +54,25 @@ const ItemCountNumber = styled.p`
   font-family: ${fonts.secondary};
 `;
 
-const CartItem: React.FC<CartItemProps> = ({ name, price, quantity, id }) => {
+const CartItem: React.FC<CartItemProps> = ({
+  name,
+  price,
+  quantity,
+  id,
+  totalPrice,
+}) => {
   const dispatch = useDispatch();
 
   const addItemHandler = () => {
-    dispatch(cartActions.addItem({ name, quantity: 1, price, id }));
+    dispatch(cartActions.addItem({ name, quantity: 1, price, id, totalPrice }));
   };
 
-  console.log(quantity);
+  console.log(price);
 
   return (
     <CartItemWrapper>
       <p>{name}</p>
-      <ItemText>${price.toFixed(2)}</ItemText>
+      <ItemText>${totalPrice.toFixed(2)}</ItemText>
       <ItemRemove>Remove</ItemRemove>
       <ItemCount>
         <ButtonPlus variant="grey" addItem={addItemHandler} />

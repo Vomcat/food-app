@@ -13,7 +13,7 @@ interface CartSliceState {
 }
 
 const initialState: CartSliceState = {
-  items: [],
+  items: JSON.parse(localStorage.getItem("cart") as string) || [],
   totalAmount: 0,
   totalQuantity: 0,
 };
@@ -36,9 +36,12 @@ const cartSlice = createSlice({
           totalPrice: newItem.price * newItem.quantity,
         });
       } else {
-        existingItem.quantity += action.payload.quantity;
-        existingItem.price = existingItem.price + newItem.price;
+        existingItem.quantity += newItem.quantity;
+        existingItem.totalPrice =
+          existingItem.totalPrice + newItem.price * newItem.quantity;
       }
+
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
     removeItem() {},
   },

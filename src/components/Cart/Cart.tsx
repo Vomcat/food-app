@@ -23,7 +23,7 @@ const CartWrapper = styled.div<Pick<CartStyleProps, "variant">>`
   gap: ${dimensions.spacing.md}px;
   ${(props) =>
     props.variant === "menu" &&
-    `position: absolute; top: 42px; right:0; padding: 50px; width:500px; background-color: ${colors.white}; border-bottom-left-radius:17px; border-bottom-right-radius:17px;`}
+    `position: absolute; top: 42px; right:0; padding: 50px; width:500px;  background-color: ${colors.white}; border-bottom-left-radius:17px; border-bottom-right-radius:17px;`}
 `;
 
 const HeaderWrapper = styled.div`
@@ -34,6 +34,17 @@ const HeaderWrapper = styled.div`
 
   ${respondFrom(breakpoints.tablet)`
   padding-bottom: ${dimensions.spacing.md2}
+  `}
+`;
+
+const CartItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${dimensions.spacing.md}px;
+
+  ${respondFrom(breakpoints.tablet)`
+    max-height: 194px;
+    overflow-y: scroll;
   `}
 `;
 
@@ -59,18 +70,22 @@ const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
     <CartWrapper variant={variant}>
       <HeaderWrapper>
         <h3>Shopping Cart</h3>
-        <RemoveAllText>Remove All</RemoveAllText>
+        {items.length > 0 && <RemoveAllText>Remove All</RemoveAllText>}
       </HeaderWrapper>
-      {items &&
-        items.map((item) => (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            price={item.price}
-            quantity={item.quantity}
-          />
-        ))}
+      <CartItemWrapper>
+        {items.length > 0
+          ? items.map((item) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                price={item.price}
+                totalPrice={item.totalPrice}
+                quantity={item.quantity}
+              />
+            ))
+          : "Cart is empty"}
+      </CartItemWrapper>
       <SummaryBlock>
         <SummaryText>Total:</SummaryText>
         <SummaryText>{totalPrice.toFixed(2)}$</SummaryText>
