@@ -1,3 +1,7 @@
+import { useSelector } from "react-redux";
+
+import { RootState } from "store/store";
+
 import styled from "styled-components";
 
 import CartItem from "./CartItem";
@@ -13,7 +17,7 @@ import {
   colors,
 } from "styles";
 
-const CartWrapper = styled.div<CartStyleProps>`
+const CartWrapper = styled.div<Pick<CartStyleProps, "variant">>`
   display: flex;
   flex-direction: column;
   gap: ${dimensions.spacing.md}px;
@@ -48,18 +52,28 @@ const SummaryText = styled.p`
   font-size: ${dimensions.fonts.medium}px;
 `;
 
-const Cart: React.FC<CartStyleProps> = ({ variant }) => {
+const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
+  const totalPrice = useSelector((state: RootState) => state.totalAmount);
+
   return (
     <CartWrapper variant={variant}>
       <HeaderWrapper>
         <h3>Shopping Cart</h3>
         <RemoveAllText>Remove All</RemoveAllText>
       </HeaderWrapper>
-      <CartItem />
-      <CartItem />
+      {items &&
+        items.map((item) => (
+          <CartItem
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantity}
+          />
+        ))}
       <SummaryBlock>
         <SummaryText>Total:</SummaryText>
-        <SummaryText>20$</SummaryText>
+        <SummaryText>{totalPrice.toFixed(2)}$</SummaryText>
       </SummaryBlock>
     </CartWrapper>
   );

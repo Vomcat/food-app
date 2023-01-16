@@ -1,6 +1,13 @@
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
-import ButtonPlus from "components/layout/ButtonPlus";
+import { RootState } from "store/store";
+
+import ButtonPlus from "components/Ui/ButtonPlus";
+
+import { cartActions } from "store/cartSlice";
+
+import { CartItemProps } from "interfaces/Cart";
 
 import {
   respondFrom,
@@ -47,15 +54,23 @@ const ItemCountNumber = styled.p`
   font-family: ${fonts.secondary};
 `;
 
-const CartItem = () => {
+const CartItem: React.FC<CartItemProps> = ({ name, price, quantity, id }) => {
+  const dispatch = useDispatch();
+
+  const addItemHandler = () => {
+    dispatch(cartActions.addItem({ name, quantity: 1, price, id }));
+  };
+
+  console.log(quantity);
+
   return (
     <CartItemWrapper>
-      <p>Mniam</p>
-      <ItemText>$5,90</ItemText>
+      <p>{name}</p>
+      <ItemText>${price.toFixed(2)}</ItemText>
       <ItemRemove>Remove</ItemRemove>
       <ItemCount>
-        <ButtonPlus variant="grey" />
-        <ItemCountNumber>2</ItemCountNumber>
+        <ButtonPlus variant="grey" addItem={addItemHandler} />
+        <ItemCountNumber>{quantity}</ItemCountNumber>
         <ButtonPlus variant="grey" plusIcon={false} />
       </ItemCount>
     </CartItemWrapper>

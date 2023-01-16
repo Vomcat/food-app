@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import ButtonPlus from "components/layout/ButtonPlus";
+import ButtonPlus from "components/Ui/ButtonPlus";
 
 describe("ButtonPlus component", () => {
   test("Button render plus", () => {

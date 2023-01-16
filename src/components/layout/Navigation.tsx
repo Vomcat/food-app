@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import PageContentContainer from "components/Ui/PageContentContainer";
 import Cart from "components/Cart/Cart";
+
+import { RootState } from "store/store";
 
 import { baseShadow, colors, dimensions } from "styles";
 
@@ -49,6 +52,10 @@ const NavigationIcons = styled.div`
 const Navigation = () => {
   const [isActiveCart, setIsActiveCart] = useState(false);
 
+  const cartItems = useSelector((state: RootState) => state.items);
+
+  console.log(cartItems);
+
   const handleMouseOver = () => {};
 
   return (
@@ -65,15 +72,12 @@ const Navigation = () => {
             <img
               src={CartIcon}
               alt="Cart Icon"
-              onMouseOver={() => {
-                setIsActiveCart(!isActiveCart);
-              }}
-              onMouseOut={() => {
+              onClick={() => {
                 setIsActiveCart(!isActiveCart);
               }}
             />
           </NavigationIcons>
-          {isActiveCart && <Cart variant="menu" />}
+          {isActiveCart && <Cart variant="menu" items={cartItems} />}
         </NavigationWrapper>
       </PageContentContainer>
     </NavigationMain>
