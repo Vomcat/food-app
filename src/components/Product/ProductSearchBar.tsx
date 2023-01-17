@@ -52,9 +52,9 @@ const ProductSearchBar = () => {
       <SearchBarRightElements>
         <SelectElement name="Sort by">
           <option>Default sorting</option>
-          <option>Alphabetic</option>
+          <option>Alphabetical</option>
           <option>Lowest price</option>
-          <option>Biggest price</option>
+          <option>Highest price</option>
         </SelectElement>
       </SearchBarRightElements>
     </SearchBarWrapper>
