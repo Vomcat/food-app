@@ -7,5 +7,5 @@ export interface ButtonProps {}
 export interface ButtonPlusProps {
   variant?: "default" | "grey";
   plusIcon?: boolean;
-  addItem?: () => void;
+  clickHandler?: () => void;
 }

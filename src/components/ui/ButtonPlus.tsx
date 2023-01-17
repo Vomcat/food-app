@@ -28,10 +28,10 @@ const Button = styled.button<Omit<ButtonPlusProps, "addItem">>`
 const ButtonPlus: React.FC<ButtonPlusProps> = ({
   variant = "default",
   plusIcon = true,
-  addItem,
+  clickHandler,
 }) => {
   return (
-    <Button variant={variant} type="button" onClick={addItem}>
+    <Button variant={variant} type="button" onClick={clickHandler}>
       {plusIcon ? (
         <img
           src={variant === "default" ? PlusIconWhite : PlusIconBlack}
