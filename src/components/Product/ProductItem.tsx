@@ -56,7 +56,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       <ItemTitle>{name}</ItemTitle>
       <ItemPrice>
         <ItemTitle>{price} $</ItemTitle>
-        <ButtonPlus addItem={addItemHandler} />
+        <ButtonPlus clickHandler={addItemHandler} />
       </ItemPrice>
     </Item>
   );

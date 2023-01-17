@@ -64,8 +64,6 @@ const Navigation = () => {
 
   const cartItems = useSelector((state: RootState) => state.items);
 
-  console.log(cartItems);
-
   const handleMouseOver = () => {};
 
   return (

@@ -1,6 +1,8 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { RootState } from "store/store";
+
+import { cartActions } from "store/cartSlice";
 
 import styled from "styled-components";
 
@@ -65,12 +67,21 @@ const SummaryText = styled.p`
 
 const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
   const totalPrice = useSelector((state: RootState) => state.totalAmount);
+  const dispatch = useDispatch();
+
+  const removeAllItemsHandler = () => {
+    dispatch(cartActions.removeAllItems());
+  };
 
   return (
     <CartWrapper variant={variant}>
       <HeaderWrapper>
         <h3>Shopping Cart</h3>
-        {items.length > 0 && <RemoveAllText>Remove All</RemoveAllText>}
+        {items.length > 0 && (
+          <RemoveAllText onClick={removeAllItemsHandler}>
+            Remove All
+          </RemoveAllText>
+        )}
       </HeaderWrapper>
       <CartItemWrapper>
         {items.length > 0

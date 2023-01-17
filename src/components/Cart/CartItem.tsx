@@ -67,7 +67,11 @@ const CartItem: React.FC<CartItemProps> = ({
     dispatch(cartActions.addItem({ name, quantity: 1, price, id, totalPrice }));
   };
 
-  console.log(price);
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItem(id));
+  };
+
+  console.log("id", id);
 
   return (
     <CartItemWrapper>
@@ -75,9 +79,13 @@ const CartItem: React.FC<CartItemProps> = ({
       <ItemText>${totalPrice.toFixed(2)}</ItemText>
       <ItemRemove>Remove</ItemRemove>
       <ItemCount>
-        <ButtonPlus variant="grey" addItem={addItemHandler} />
+        <ButtonPlus variant="grey" clickHandler={addItemHandler} />
         <ItemCountNumber>{quantity}</ItemCountNumber>
-        <ButtonPlus variant="grey" plusIcon={false} />
+        <ButtonPlus
+          variant="grey"
+          plusIcon={false}
+          clickHandler={removeItemHandler}
+        />
       </ItemCount>
     </CartItemWrapper>
   );
