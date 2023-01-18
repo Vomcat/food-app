@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 interface CartSliceState {
   items: {
@@ -57,6 +57,16 @@ const cartSlice = createSlice({
         existingItem!.totalPrice =
           existingItem!.totalPrice - existingItem!.price;
       }
+      localStorage.setItem("cart", JSON.stringify(state.items));
+    },
+
+    removeOneItem(state, action) {
+      const id = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
+      state.totalAmount = state.totalAmount - existingItem!.totalPrice;
+      state.totalQuantity = state.totalAmount - existingItem!.quantity;
+
+      state.items = state.items.filter((item) => item.id !== id);
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 

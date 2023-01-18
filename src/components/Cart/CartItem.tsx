@@ -1,7 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
-
-import { RootState } from "store/store";
 
 import ButtonPlus from "components/Ui/ButtonPlus";
 
@@ -71,13 +69,15 @@ const CartItem: React.FC<CartItemProps> = ({
     dispatch(cartActions.removeItem(id));
   };
 
-  console.log("id", id);
+  const removeOneItemHandler = () => {
+    dispatch(cartActions.removeOneItem(id));
+  };
 
   return (
     <CartItemWrapper>
       <p>{name}</p>
       <ItemText>${totalPrice.toFixed(2)}</ItemText>
-      <ItemRemove>Remove</ItemRemove>
+      <ItemRemove onClick={removeOneItemHandler}>Remove</ItemRemove>
       <ItemCount>
         <ButtonPlus variant="grey" clickHandler={addItemHandler} />
         <ItemCountNumber>{quantity}</ItemCountNumber>
