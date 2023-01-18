@@ -10,12 +10,14 @@ interface CartSliceState {
   }[];
   totalAmount: number;
   totalQuantity: number;
+  error: null;
 }
 
 const initialState: CartSliceState = {
   items: JSON.parse(localStorage.getItem("cart") as string) || [],
   totalAmount: 0,
   totalQuantity: 0,
+  error: null,
 };
 
 const cartSlice = createSlice({
@@ -47,6 +49,9 @@ const cartSlice = createSlice({
     removeItem(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
+
+      if (existingItem) {
+      }
       state.totalQuantity--;
       state.totalAmount = state.totalAmount - existingItem!.price;
 
@@ -63,8 +68,8 @@ const cartSlice = createSlice({
     removeOneItem(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
-      state.totalAmount = state.totalAmount - existingItem!.totalPrice;
-      state.totalQuantity = state.totalAmount - existingItem!.quantity;
+      state.totalAmount -= existingItem!.totalPrice;
+      state.totalQuantity -= existingItem!.quantity;
 
       state.items = state.items.filter((item) => item.id !== id);
       localStorage.setItem("cart", JSON.stringify(state.items));
