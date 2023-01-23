@@ -44,7 +44,25 @@ const NavigationLogo = styled.div`
   }
 `;
 
+const NavigationItemsCounter = styled.div`
+  position: absolute;
+  top: -${dimensions.spacing.sm}px;
+  left: -${dimensions.spacing.sm}px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: ${colors.primary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: ${dimensions.fonts.small}px;
+  }
+`;
+
 const NavigationIcons = styled.div`
+  position: relative;
   display: flex;
   gap: ${dimensions.spacing.sm}px;
   cursor: pointer;
@@ -63,6 +81,9 @@ const Navigation = () => {
   const [isActiveCart, setIsActiveCart] = useState(false);
 
   const cartItems = useSelector((state: RootState) => state.items);
+  const cartItemsQuantity = useSelector(
+    (state: RootState) => state.totalQuantity
+  );
 
   const handleMouseOver = () => {};
 
@@ -76,6 +97,11 @@ const Navigation = () => {
             </a>
           </NavigationLogo>
           <NavigationIcons>
+            {cartItems.length > 0 && (
+              <NavigationItemsCounter>
+                <p>{cartItemsQuantity}</p>
+              </NavigationItemsCounter>
+            )}
             <img
               src={ProfileIcon}
               alt="Profile Icon"
