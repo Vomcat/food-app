@@ -76,10 +76,11 @@ p {
 
 input{
   font-size: ${dimensions.fonts.small}px;
-  color: ${colors.darkGrey};
+  color: ${colors.dark};
 
   &::placeholder {
     font-family: ${fonts.primaryItalic};
+    color: ${colors.darkGrey};
   }
 }
 

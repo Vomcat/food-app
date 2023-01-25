@@ -26,6 +26,7 @@ export const breakpoints = {
 
 export const dimensions = {
   fonts: {
+    xsmall: 12,
     small: 14,
     regular: 16,
     medium: 20,
