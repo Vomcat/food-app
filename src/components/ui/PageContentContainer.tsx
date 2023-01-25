@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Props } from "interfaces/Layout";
+import { Props } from "interfaces/Ui";
 
 import { respondFrom, breakpoints, dimensions } from "styles";
 

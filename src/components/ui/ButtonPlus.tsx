@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonPlusProps } from "interfaces/Layout";
+import { ButtonPlusProps } from "interfaces/Ui";
 
 import { colors } from "styles";
 
