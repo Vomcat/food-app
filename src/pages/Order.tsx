@@ -10,15 +10,16 @@ import Form from "components/Form/Form";
 import PageContentContainer from "components/Ui/PageContentContainer";
 
 const OrderWrapper = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
   padding: ${dimensions.spacing.md}px 0;
   gap: 50px;
+  min-height: calc(100vh - 50px);
 
   ${respondFrom(breakpoints.tablet)`
-    flex-direction: row;
+    grid-template-columns: 1fr 30%;
     gap: 100px;
     padding: ${dimensions.spacing.md3}px 0;
+    min-height: calc(100vh - 50px - 82px);
 `}
 `;
 
