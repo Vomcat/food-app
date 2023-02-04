@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import styled from "styled-components";
-import { respondFrom, dimensions, breakpoints } from "styles";
+import { respondFrom, dimensions, breakpoints, respondTo } from "styles";
 
 import { RootState } from "store/store";
 
@@ -9,18 +9,39 @@ import Cart from "components/Cart/Cart";
 import Form from "components/Form/Form";
 import PageContentContainer from "components/Ui/PageContentContainer";
 
-const OrderWrapper = styled.div`
-  display: grid;
-  padding: ${dimensions.spacing.md}px 0;
-  gap: 50px;
-  min-height: calc(100vh - 50px);
+const HeadingStyle = styled.h1`
+  font-size: ${dimensions.fonts.heading}px;
+  padding-bottom: ${dimensions.spacing.md3}px;
 
   ${respondFrom(breakpoints.tablet)`
-    grid-template-columns: 1fr 30%;
-    gap: 100px;
+    padding-bottom: ${dimensions.spacing.md2}px;
+`}
+`;
+
+const OrderContainer = styled.div`
+  min-height: calc(100vh - 50px);
+  padding: ${dimensions.spacing.md}px 0;
+
+  ${respondFrom(breakpoints.desktop)`
     padding: ${dimensions.spacing.md3}px 0;
     min-height: calc(100vh - 50px - 82px);
 `}
+`;
+
+const OrderWrapper = styled.div`
+  display: grid;
+  gap: 50px;
+
+  ${respondFrom(breakpoints.desktop)`
+    grid-template-columns: 1fr 30%;
+    gap: 100px;
+`}
+
+  >*:last-child {
+    ${respondTo(breakpoints.desktop)`
+        order: -1;
+      `}
+  }
 `;
 
 const Order = () => {
@@ -29,10 +50,13 @@ const Order = () => {
   return (
     <>
       <PageContentContainer>
-        <OrderWrapper>
-          <Form />
-          <Cart variant="default" items={cartItems} />
-        </OrderWrapper>
+        <OrderContainer>
+          <HeadingStyle>Checkout</HeadingStyle>
+          <OrderWrapper>
+            <Form />
+            <Cart variant="default" items={cartItems} />
+          </OrderWrapper>
+        </OrderContainer>
       </PageContentContainer>
     </>
   );
