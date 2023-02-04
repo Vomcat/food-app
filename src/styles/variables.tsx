@@ -1,7 +1,9 @@
 export const colors = {
   primary: "#F38181",
   primaryLight: "rgba(243, 129, 129, 0.29)",
+  primaryDark: "#b34242",
   secondary: "#95E1D3",
+  secondaryDark: "#217868",
   dark: "#333333",
   darkGrey: "#999999",
   grey: "#D2CDCD",
@@ -26,7 +28,7 @@ export const breakpoints = {
 
 export const dimensions = {
   fonts: {
-    xsmall: 12,
+    xsmall: 10,
     small: 14,
     regular: 16,
     medium: 20,
@@ -35,6 +37,7 @@ export const dimensions = {
     heading: 24,
   },
   spacing: {
+    xsm: 4,
     sm: 8,
     md: 16,
     md2: 24,
@@ -42,6 +45,10 @@ export const dimensions = {
     lg: 40,
     lg2: 48,
     lg3: 56,
+    lg4: 64,
+    lg5: 72,
+    lg80: 80,
+    lg88: 88,
     lgmax: 104,
   },
   pageContentWidth: 1232,
