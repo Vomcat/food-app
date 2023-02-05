@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -10,21 +11,12 @@ import { orderSchema } from "components/Form/orderSchema";
 
 import Input from "./Input";
 import Button from "components/Ui/Button";
+import Modal from "components/Ui/Modal";
+import FormConfirmation from "./FormConfimation";
 
 interface FormStylesProps {
   inputSize?: string;
 }
-
-const FormWrapper = styled.div``;
-
-const FormHeading = styled.h1`
-  font-size: ${dimensions.fonts.heading}px;
-  padding-bottom: ${dimensions.spacing.md}px;
-
-  ${respondFrom(breakpoints.tablet)`
-    padding-bottom: ${dimensions.spacing.md2}px;
-`}
-`;
 
 const InputsWrapper = styled.div`
   display: flex;
@@ -56,27 +48,50 @@ const InputGroup = styled.div<FormStylesProps>`
 const InputErrorMessage = styled.p`
   position: absolute;
   left: ${dimensions.spacing.md}px;
-  bottom: ${dimensions.spacing.md}px;
+  bottom: ${dimensions.spacing.xsm}px;
   font-family: ${fonts.primaryItalic};
   font-size: ${dimensions.fonts.xsmall}px;
   color: ${colors.red};
+
+  ${respondFrom(breakpoints.tablet)`
+    bottom: ${dimensions.spacing.md}px;
+`}
 `;
 
 const Form = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [dataForm, setDataForm] = useState<FormData>();
+
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<FormData>({ resolver: yupResolver(orderSchema) });
+  } = useForm<FormData>({
+    resolver: yupResolver(orderSchema),
+    defaultValues: {
+      name: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      streetAddress: "",
+      postCode: "",
+      city: "",
+      streetNumber: "",
+    },
+  });
 
-  const onSubmit = (data: any) => {
-    console.log(data, errors.name);
+  const onSubmit = (data: FormData) => {
+    setIsOpen(!isOpen);
+    setDataForm(data);
+  };
+
+  const onModalChangeHandler = () => {
+    setIsOpen(!isOpen);
+    console.log("testowe wywowalnie");
   };
 
   return (
-    <FormWrapper>
-      <FormHeading>Checkout</FormHeading>
+    <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <InputsWrapper>
           <InputGroup>
@@ -144,7 +159,15 @@ const Form = () => {
         </InputsWrapper>
         <Button type="submit">Order</Button>
       </form>
-    </FormWrapper>
+      {dataForm && (
+        <Modal isOpen={isOpen}>
+          <FormConfirmation
+            clickHandler={onModalChangeHandler}
+            data={dataForm}
+          />
+        </Modal>
+      )}
+    </>
   );
 };
 

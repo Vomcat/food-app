@@ -8,3 +8,8 @@ export interface FormData {
   city: string;
   postCode: string;
 }
+
+export interface FormConfimationProps {
+  clickHandler: () => void;
+  data: FormData;
+}
