@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ButtonProps } from "interfaces/Ui";
 import { colors, dimensions, fonts } from "styles";
 
-const ButtonMain = styled.button`
+const ButtonMain = styled.button<ButtonProps>`
   cursor: pointer;
   border: none;
   width: 100%;
@@ -11,19 +11,21 @@ const ButtonMain = styled.button`
   font-family: ${fonts.secondaryBold};
   font-size: ${dimensions.fonts.regular}px;
   color: ${colors.white};
-  background-color: ${colors.secondary};
+  background-color: ${(props) =>
+    props.color !== "default" ? colors.primary : colors.secondary};
   padding: ${dimensions.spacing.sm}px 0;
   transition: 0.4s;
 
   &:hover {
-    background-color: ${colors.primary};
+    background-color: ${(props) =>
+      props.color !== "default" ? colors.primaryDark : colors.secondaryDark};
   }
 `;
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { type, clickHandler, children } = props;
+  const { type, clickHandler, children, color = "default" } = props;
   return (
-    <ButtonMain onClick={clickHandler} type={type}>
+    <ButtonMain onClick={clickHandler} type={type} color={color}>
       {children}
     </ButtonMain>
   );
