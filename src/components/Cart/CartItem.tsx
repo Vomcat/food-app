@@ -45,7 +45,7 @@ const ItemCount = styled.div`
   gap: ${dimensions.spacing.md}px;
 
   ${respondFrom(breakpoints.tablet)`
-  gap: ${dimensions.spacing.md2}px;`}
+    gap: ${dimensions.spacing.sm}px;`}
 `;
 
 const ItemCountNumber = styled.p`

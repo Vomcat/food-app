@@ -18,6 +18,9 @@ const Button = styled.button<Omit<ButtonPlusProps, "addItem">>`
     props.variant !== "default" ? colors.lightGrey : colors.secondary};
   border-radius: ${(props) => (props.variant !== "default" ? "50%" : "5px")};
   transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: ${(props) =>

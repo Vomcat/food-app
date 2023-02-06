@@ -1,10 +1,12 @@
-export interface CartStyleProps {
+export interface CartProps {
   variant: "default" | "menu";
-  items: any[];
+  items: CartItemProps[];
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
 export interface CartItemProps {
-  id?: number;
+  id: number;
   name: string;
   price: number;
   totalPrice: number;

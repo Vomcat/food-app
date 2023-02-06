@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+
 import styled from "styled-components";
-
-import PageContentContainer from "components/Ui/PageContentContainer";
-import Cart from "components/Cart/Cart";
-
-import { RootState } from "store/store";
-
 import {
   baseShadow,
   colors,
@@ -14,6 +9,11 @@ import {
   breakpoints,
   respondFrom,
 } from "styles";
+
+import { RootState } from "store/store";
+
+import PageContentContainer from "components/Ui/PageContentContainer";
+import Cart from "components/Cart/Cart";
 
 import LogoImage from "assets/images/Logo.png";
 import CartIcon from "assets/svg/Cart-icon.svg";
@@ -48,8 +48,8 @@ const NavigationItemsCounter = styled.div`
   position: absolute;
   top: -${dimensions.spacing.sm}px;
   left: -${dimensions.spacing.sm}px;
-  width: 19px;
-  height: 19px;
+  width: ${dimensions.fonts.regular}px;
+  height: ${dimensions.fonts.regular}px;
   border-radius: 50%;
   background-color: ${colors.primary};
   display: flex;
@@ -59,6 +59,11 @@ const NavigationItemsCounter = styled.div`
   p {
     font-size: ${dimensions.fonts.small}px;
   }
+`;
+
+const CartIconStyles = styled.div`
+  position: relative;
+  height: 100%;
 `;
 
 const NavigationIcons = styled.div`
@@ -78,14 +83,13 @@ const NavigationIcons = styled.div`
 `;
 
 const Navigation = () => {
-  const [isActiveCart, setIsActiveCart] = useState(false);
+  const [isOnIcon, setIsOnIcon] = useState(false);
+  const [isOnCart, setIsOnCart] = useState(false);
 
   const cartItems = useSelector((state: RootState) => state.items);
   const cartItemsQuantity = useSelector(
     (state: RootState) => state.totalQuantity
   );
-
-  const handleMouseOver = () => {};
 
   return (
     <NavigationMain>
@@ -97,21 +101,37 @@ const Navigation = () => {
             </a>
           </NavigationLogo>
           <NavigationIcons>
-            {cartItems.length > 0 && (
-              <NavigationItemsCounter>
-                <p>{cartItemsQuantity}</p>
-              </NavigationItemsCounter>
-            )}
-            <img
-              src={ProfileIcon}
-              alt="Profile Icon"
-              onClick={() => {
-                setIsActiveCart(!isActiveCart);
-              }}
-            />
+            <CartIconStyles>
+              {cartItems.length > 0 && (
+                <NavigationItemsCounter>
+                  <p>{cartItemsQuantity}</p>
+                </NavigationItemsCounter>
+              )}
+              <img
+                src={ProfileIcon}
+                alt="Profile Icon"
+                onMouseEnter={() => {
+                  setIsOnIcon(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOnIcon(false);
+                }}
+              />
+            </CartIconStyles>
             <img src={CartIcon} alt="Cart Icon" />
           </NavigationIcons>
-          {isActiveCart && <Cart variant="menu" items={cartItems} />}
+          {(isOnIcon || isOnCart) && (
+            <Cart
+              variant="menu"
+              items={cartItems}
+              onMouseEnter={() => {
+                setIsOnCart(true);
+              }}
+              onMouseLeave={() => {
+                setIsOnCart(false);
+              }}
+            />
+          )}
         </NavigationWrapper>
       </PageContentContainer>
     </NavigationMain>
