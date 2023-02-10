@@ -8,25 +8,7 @@ import { RootState } from "store/store";
 import Cart from "components/Cart/Cart";
 import Form from "components/Form/Form";
 import PageContentContainer from "components/Ui/PageContentContainer";
-
-const HeadingStyle = styled.h1`
-  font-size: ${dimensions.fonts.heading}px;
-  padding-bottom: ${dimensions.spacing.md3}px;
-
-  ${respondFrom(breakpoints.tablet)`
-    padding-bottom: ${dimensions.spacing.md2}px;
-`}
-`;
-
-const OrderContainer = styled.div`
-  min-height: calc(100vh - 50px);
-  padding: ${dimensions.spacing.md}px 0;
-
-  ${respondFrom(breakpoints.desktop)`
-    padding: ${dimensions.spacing.md3}px 0;
-    min-height: calc(100vh - 50px - 82px);
-`}
-`;
+import Section from "components/Ui/Section";
 
 const OrderWrapper = styled.div`
   display: grid;
@@ -48,17 +30,15 @@ const Order = () => {
   const cartItems = useSelector((state: RootState) => state.items);
 
   return (
-    <>
+    <Section styles="fullHeight">
       <PageContentContainer>
-        <OrderContainer>
-          <HeadingStyle>Checkout</HeadingStyle>
-          <OrderWrapper>
-            <Form />
-            <Cart variant="default" items={cartItems} />
-          </OrderWrapper>
-        </OrderContainer>
+        <h1>Checkout</h1>
+        <OrderWrapper>
+          <Form />
+          <Cart variant="default" items={cartItems} />
+        </OrderWrapper>
       </PageContentContainer>
-    </>
+    </Section>
   );
 };
 
