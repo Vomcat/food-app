@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -71,9 +73,9 @@ const Navigation = () => {
       <PageContentContainer>
         <NavigationWrapper>
           <NavigationLogo>
-            <a href="/">
+            <Link to="/">
               <img src={LogoImage} alt="Logo" />
-            </a>
+            </Link>
           </NavigationLogo>
           <NavigationIcons>
             <img
@@ -83,7 +85,9 @@ const Navigation = () => {
                 setIsActiveCart(!isActiveCart);
               }}
             />
-            <img src={CartIcon} alt="Cart Icon" />
+            <Link to="/order-history">
+              <img src={CartIcon} alt="Cart Icon" />
+            </Link>
           </NavigationIcons>
           {isActiveCart && <Cart variant="menu" items={cartItems} />}
         </NavigationWrapper>
