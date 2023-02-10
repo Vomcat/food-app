@@ -1,15 +1,7 @@
 import styled from "styled-components";
+import { respondFrom, breakpoints, dimensions, colors } from "styles";
 
 import { CartItemProps } from "interfaces/Cart";
-
-import {
-  respondFrom,
-  breakpoints,
-  errorText,
-  dimensions,
-  fonts,
-  colors,
-} from "styles";
 
 const ItemWrapper = styled.div`
   display: flex;

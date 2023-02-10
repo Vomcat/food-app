@@ -126,6 +126,7 @@ const FormConfirmation = (props: FormConfimationProps) => {
       },
       body: {
         orderItems,
+        orderTotalPrice,
         name,
         lastName,
         email,
