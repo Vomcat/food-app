@@ -18,3 +18,7 @@ export interface ModalProps extends Props {
   isOpen: boolean;
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
 }
+
+export interface SectionProps extends Props {
+  styles?: "fullHeight";
+}
