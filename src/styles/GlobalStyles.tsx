@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-import { colors, dimensions, fonts } from "./index";
+import { colors, dimensions, fonts, respondFrom, breakpoints } from "./index";
 
 import montserrat from "assets/fonts/montserrat/Montserrat-Medium.ttf";
 import montserratBold from "assets/fonts/montserrat/Montserrat-Bold.ttf";
@@ -66,6 +66,15 @@ h2,
 h3,
 h4 {
   font-family: ${fonts.secondaryBold};
+}
+
+h1{
+  font-size: ${dimensions.fonts.heading}px;
+  padding-bottom: ${dimensions.spacing.md3}px;
+
+  ${respondFrom(breakpoints.tablet)`
+    padding-bottom: ${dimensions.spacing.md2}px;
+`}
 }
 
 p {
