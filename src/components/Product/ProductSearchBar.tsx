@@ -9,6 +9,7 @@ const SearchBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 21px 0;
+  overflow: hidden;
 `;
 
 const SearchBarLeftElements = styled.div`

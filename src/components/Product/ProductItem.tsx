@@ -1,6 +1,9 @@
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import ButtonPlus from "components/layout/ButtonPlus";
+import ButtonPlus from "components/Ui/ButtonPlus";
+
+import { cartActions } from "store/cartSlice";
 
 import { colors, dimensions, fonts, respondFrom, breakpoints } from "styles";
 
@@ -40,6 +43,11 @@ const ProductItem: React.FC<ProductItemProps> = ({
   name,
   price,
 }) => {
+  const dispatch = useDispatch();
+
+  const addItemHandler = () => {
+    dispatch(cartActions.addItem({ name, quantity: 1, price, id }));
+  };
   return (
     <Item>
       <ItemImage>
@@ -48,7 +56,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       <ItemTitle>{name}</ItemTitle>
       <ItemPrice>
         <ItemTitle>{price} $</ItemTitle>
-        <ButtonPlus />
+        <ButtonPlus clickHandler={addItemHandler} />
       </ItemPrice>
     </Item>
   );

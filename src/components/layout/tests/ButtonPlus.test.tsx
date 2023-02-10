@@ -2,7 +2,9 @@ import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
-import ButtonPlus from "components/layout/ButtonPlus";
+import { colors } from "styles";
+
+import ButtonPlus from "components/Ui/ButtonPlus";
 
 describe("ButtonPlus component", () => {
   test("Button render plus", () => {
@@ -19,11 +21,11 @@ describe("ButtonPlus component", () => {
 
   test("Button default bg-color", () => {
     const tree = renderer.create(<ButtonPlus />).toJSON();
-    expect(tree).toHaveStyleRule("background-color", "#95E1D3");
+    expect(tree).toHaveStyleRule("background-color", colors.secondary);
   });
 
   test("button minus bg-color", () => {
     const tree = renderer.create(<ButtonPlus variant="grey" />).toJSON();
-    expect(tree).toHaveStyleRule("background-color", "#D2CDCD");
+    expect(tree).toHaveStyleRule("background-color", colors.lightGrey);
   });
 });

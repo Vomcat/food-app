@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
-import { respondFrom, breakpoints, dimensions } from "styles";
+import { Props } from "interfaces/Layout";
 
-type Props = {
-  children: React.ReactNode;
-};
+import { respondFrom, breakpoints, dimensions } from "styles";
 
 const Wrapper = styled.div`
   padding: 0 ${dimensions.spacing.md}px;
-  overflow: hidden;
+  position: relative;
 
   ${respondFrom(breakpoints.desktop)`
       max-width: ${dimensions.pageContentWidth}px;
