@@ -1,9 +1,17 @@
 import { useCallback, useState } from "react";
+import { OrderItemProps } from "interfaces/Order";
+
+interface sendRequestProps {
+  url: string;
+  method?: string;
+  headers?: {};
+  body?: OrderItemProps | null;
+}
 
 const useFetch = () => {
   const [error, setError] = useState<string | null>(null);
 
-  const sendRequest = useCallback(async (requestConfig: any) => {
+  const sendRequest = useCallback(async (requestConfig: sendRequestProps) => {
     try {
       const response = await fetch(
         `${process.env.REACT_APP_API_HOST}/${requestConfig.url}`,
@@ -17,8 +25,10 @@ const useFetch = () => {
       if (!response.ok) {
         throw new Error("Request failed!");
       }
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        return setError(err.message);
+      }
     }
   }, []);
 
