@@ -8,7 +8,6 @@ const Homepage = () => {
     <>
       <Banner />
       <PageContentContainer>
-        <ProductSearchBar />
         <ProductList />
       </PageContentContainer>
     </>

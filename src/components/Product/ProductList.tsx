@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import Item from "components/Product/ProductItem";
-
 import { respondFrom, breakpoints, dimensions } from "styles";
 
 import { ProductItemProps } from "interfaces/Product";
+
+import ProductSearchBar from "components/Product/ProductSearchBar";
+import Item from "components/Product/ProductItem";
 
 const ProductListWrapper = styled.div`
   display: grid;
@@ -44,18 +45,38 @@ const ProductList = () => {
     fetchData();
   }, []);
 
+  const onSelectSortHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const sortDirection = e.target.value;
+    const copyArray = [...items];
+
+    copyArray.sort((a: ProductItemProps, b: ProductItemProps) => {
+      return sortDirection === "0"
+        ? a.id - b.id
+        : sortDirection === "1"
+        ? a.name.localeCompare(b.name)
+        : sortDirection === "2"
+        ? a.price - b.price
+        : b.price - a.price;
+    });
+
+    setItems(copyArray);
+  };
+
   return (
-    <ProductListWrapper>
-      {items.map((item) => (
-        <Item
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          price={item.price}
-          imageURI={item.imageURI}
-        />
-      ))}
-    </ProductListWrapper>
+    <>
+      <ProductSearchBar changeHandler={onSelectSortHandler} />
+      <ProductListWrapper>
+        {items.map((item) => (
+          <Item
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            price={item.price}
+            imageURI={item.imageURI}
+          />
+        ))}
+      </ProductListWrapper>
+    </>
   );
 };
 
