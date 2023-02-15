@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "utils/utils-for-tests";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
@@ -18,7 +18,7 @@ describe("ButtonPlus component", () => {
   });
 
   test("Button default bg-color", () => {
-    const tree = renderer.create(<ButtonPlus />).toJSON();
+    const tree = render(<ButtonPlus />);
     expect(tree).toHaveStyleRule("background-color", "#95E1D3");
   });
 

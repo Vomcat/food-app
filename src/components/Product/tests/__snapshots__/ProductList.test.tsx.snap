@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product List render test renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-jSUZER jtvLRR"
+  >
+    <div
+      class="sc-gswNZR cFpgxK"
+    >
+      <div
+        class="sc-dkrFOg"
+      >
+        <img
+          alt="Mniam Mniam Food"
+        />
+      </div>
+      <p
+        class="sc-hLBbgP dhupfm"
+      >
+        Mniam Mniam Food
+      </p>
+      <div
+        class="sc-eDvSVe dzokeT"
+      >
+        <p
+          class="sc-hLBbgP dhupfm"
+        >
+          5 $
+        </p>
+        <button
+          class="sc-bcXHqe fqaMte"
+          type="button"
+        >
+          <img
+            alt="plus icon"
+            src="plus.png"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      class="sc-gswNZR cFpgxK"
+    >
+      <div
+        class="sc-dkrFOg"
+      >
+        <img
+          alt="Mniam Mniam Food as adsdasdasd"
+        />
+      </div>
+      <p
+        class="sc-hLBbgP dhupfm"
+      >
+        Mniam Mniam Food as adsdasdasd
+      </p>
+      <div
+        class="sc-eDvSVe dzokeT"
+      >
+        <p
+          class="sc-hLBbgP dhupfm"
+        >
+          5 $
+        </p>
+        <button
+          class="sc-bcXHqe fqaMte"
+          type="button"
+        >
+          <img
+            alt="plus icon"
+            src="plus.png"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
