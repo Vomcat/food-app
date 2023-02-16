@@ -85,14 +85,14 @@ const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
       </HeaderWrapper>
       <CartItemWrapper>
         {items.length > 0
-          ? items.map((item) => (
+          ? items.map(({ id, name, price, totalPrice, quantity }) => (
               <CartItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                totalPrice={item.totalPrice}
-                quantity={item.quantity}
+                key={id}
+                id={id}
+                name={name}
+                price={price}
+                totalPrice={totalPrice}
+                quantity={quantity}
               />
             ))
           : "Cart is empty"}
