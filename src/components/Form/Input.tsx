@@ -20,8 +20,8 @@ const InputMain = styled.input`
 `;
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { ...inpputAtributes } = props;
-  return <InputMain ref={ref} {...inpputAtributes} />;
+  const { ...inputAtributes } = props;
+  return <InputMain ref={ref} {...inputAtributes} />;
 });
 
 export default Input;
