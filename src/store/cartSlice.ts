@@ -10,14 +10,12 @@ interface CartSliceState {
   }[];
   totalAmount: number;
   totalQuantity: number;
-  error: null;
 }
 
 const initialState: CartSliceState = {
   items: JSON.parse(localStorage.getItem("cart") as string) || [],
   totalAmount: 0,
   totalQuantity: 0,
-  error: null,
 };
 
 const cartSlice = createSlice({
