@@ -1,12 +1,6 @@
 import { useDispatch } from "react-redux";
+
 import styled from "styled-components";
-
-import ButtonPlus from "components/Ui/ButtonPlus";
-
-import { cartActions } from "store/cartSlice";
-
-import { CartItemProps } from "interfaces/Cart";
-
 import {
   respondFrom,
   breakpoints,
@@ -15,6 +9,12 @@ import {
   fonts,
   colors,
 } from "styles";
+
+import { cartActions } from "store/cartSlice";
+
+import { CartItemProps } from "interfaces/Cart";
+
+import ButtonPlus from "components/Ui/ButtonPlus";
 
 const CartItemWrapper = styled.div`
   display: grid;
@@ -66,11 +66,11 @@ const CartItem: React.FC<CartItemProps> = ({
   };
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItem(id));
+    dispatch(cartActions.removeItemInstance(id));
   };
 
   const removeOneItemHandler = () => {
-    dispatch(cartActions.removeOneItem(id));
+    dispatch(cartActions.removeItemEntry(id));
   };
 
   return (

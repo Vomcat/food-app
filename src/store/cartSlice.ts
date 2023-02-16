@@ -25,28 +25,27 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
+      const { id, name, price, quantity } = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
       state.totalQuantity++;
-      state.totalAmount = state.totalAmount + newItem.price;
+      state.totalAmount = state.totalAmount + price;
       if (!existingItem) {
         state.items.push({
-          id: newItem.id,
-          name: newItem.name,
-          price: newItem.price,
-          quantity: newItem.quantity,
-          totalPrice: newItem.price * newItem.quantity,
+          id: id,
+          name: name,
+          price: price,
+          quantity: quantity,
+          totalPrice: price * quantity,
         });
       } else {
-        existingItem.quantity += newItem.quantity;
-        existingItem.totalPrice =
-          existingItem.totalPrice + newItem.price * newItem.quantity;
+        existingItem.quantity += quantity;
+        existingItem.totalPrice = existingItem.totalPrice + price * quantity;
       }
 
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 
-    removeItem(state, action) {
+    removeItemEntry(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
 
@@ -65,7 +64,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 
-    removeOneItem(state, action) {
+    removeItemInstance(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
       state.totalAmount -= existingItem!.totalPrice;
