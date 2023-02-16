@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { baseShadow, colors } from "styles";
 
-import { ProductSearchBarProps } from "interfaces/Product";
+import { ProductSortBarProps } from "interfaces/Product";
 
 const SearchBarWrapper = styled.div`
   ${baseShadow};
@@ -40,7 +40,7 @@ const TextElement = styled.div`
   }
 `;
 
-const ProductSearchBar = (props: ProductSearchBarProps) => {
+const ProductSortBar = (props: ProductSortBarProps) => {
   const { changeHandler } = props;
 
   return (
@@ -63,4 +63,4 @@ const ProductSearchBar = (props: ProductSearchBarProps) => {
   );
 };
 
-export default ProductSearchBar;
+export default ProductSortBar;

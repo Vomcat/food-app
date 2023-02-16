@@ -5,6 +5,6 @@ export interface ProductItemProps {
   price: number;
 }
 
-export interface ProductSearchBarProps {
+export interface ProductSortBarProps {
   changeHandler: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

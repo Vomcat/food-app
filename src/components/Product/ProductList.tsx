@@ -5,7 +5,7 @@ import { respondFrom, breakpoints, dimensions } from "styles";
 
 import { ProductItemProps } from "interfaces/Product";
 
-import ProductSearchBar from "components/Product/ProductSearchBar";
+import ProductSortBar from "components/Product/ProductSortBar";
 import Item from "components/Product/ProductItem";
 
 const ProductListWrapper = styled.div`
@@ -64,15 +64,15 @@ const ProductList = () => {
 
   return (
     <>
-      <ProductSearchBar changeHandler={onSelectSortHandler} />
+      <ProductSortBar changeHandler={onSelectSortHandler} />
       <ProductListWrapper>
-        {items.map((item) => (
+        {items.map(({ id, name, price, imageURI }) => (
           <Item
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            price={item.price}
-            imageURI={item.imageURI}
+            key={id}
+            id={id}
+            name={name}
+            price={price}
+            imageURI={imageURI}
           />
         ))}
       </ProductListWrapper>
