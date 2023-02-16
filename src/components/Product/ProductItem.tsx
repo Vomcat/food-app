@@ -46,7 +46,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
   const dispatch = useDispatch();
 
   const addItemHandler = () => {
-    dispatch(cartActions.addItem({ name, quantity: 1, price, id }));
+    dispatch(cartActions.addItem({ name, price, id, quantity: 1 }));
   };
   return (
     <Item>
