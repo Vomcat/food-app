@@ -4,9 +4,9 @@ export interface CartStyleProps {
 }
 
 export interface CartItemProps {
-  id?: number;
+  id: number;
   name: string;
-  price?: number;
+  price: number;
   totalPrice: number;
   quantity: number;
 }

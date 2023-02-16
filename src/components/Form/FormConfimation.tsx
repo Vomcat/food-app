@@ -180,12 +180,14 @@ const FormConfirmation = (props: FormConfimationProps) => {
         </FormDataWrapper>
         <OrderData>
           <OrderSummary>
-            {orderItems.map(({ id, name, quantity, totalPrice }) => (
+            {orderItems.map(({ id, name, quantity, totalPrice, price }) => (
               <FormConfirmationItem
                 key={id}
+                id={id}
                 name={name}
                 quantity={quantity}
                 totalPrice={totalPrice}
+                price={price}
               />
             ))}
             <OrderSummaryPrice>Total: ${orderTotalPrice}</OrderSummaryPrice>
