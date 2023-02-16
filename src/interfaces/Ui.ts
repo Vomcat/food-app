@@ -3,7 +3,7 @@ export interface Props {
 }
 
 export interface ButtonProps extends Props {
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset";
   color?: "default" | "red";
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
 }
