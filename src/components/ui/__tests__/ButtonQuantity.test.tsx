@@ -5,26 +5,26 @@ import "@testing-library/jest-dom";
 
 import { colors } from "styles";
 
-import ButtonPlus from "components/Ui/ButtonQuantity";
+import ButtonQuantity from "components/Ui/ButtonQuantity";
 
-describe("ButtonPlus component", () => {
+describe("ButtonQuantity component", () => {
   test("Button render plus", () => {
-    render(<ButtonPlus />);
+    render(<ButtonQuantity />);
     const testImage = document.querySelector("img") as HTMLImageElement;
     expect(testImage.alt).toContain("plus icon");
   });
   test("Button render minus", () => {
-    render(<ButtonPlus plusIcon={false} />);
+    render(<ButtonQuantity plusIcon={false} />);
     const testImage = document.querySelector("img") as HTMLImageElement;
     expect(testImage.alt).toContain("minus icon");
   });
 
   test("Button default bg-color", () => {
-    const tree = renderer.create(<ButtonPlus />).toJSON();
+    const tree = renderer.create(<ButtonQuantity />).toJSON();
     expect(tree).toHaveStyleRule("background-color", colors.secondary);
   });
   test("button minus bg-color", () => {
-    const tree = renderer.create(<ButtonPlus variant="grey" />).toJSON();
+    const tree = renderer.create(<ButtonQuantity variant="grey" />).toJSON();
     expect(tree).toHaveStyleRule("background-color", colors.lightGrey);
   });
 });
