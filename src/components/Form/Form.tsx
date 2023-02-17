@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import styled from "styled-components";
-
 import { respondFrom, dimensions, breakpoints, colors, fonts } from "styles";
 
 import { FormData } from "interfaces/Form";
@@ -87,7 +86,6 @@ const Form = () => {
 
   const onModalChangeHandler = () => {
     setIsOpen(!isOpen);
-    console.log("testowe wywowalnie");
   };
 
   return (

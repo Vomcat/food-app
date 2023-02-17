@@ -3,12 +3,12 @@ export interface Props {
 }
 
 export interface ButtonProps extends Props {
-  type?: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset";
   color?: "default" | "red";
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export interface ButtonPlusProps {
+export interface ButtonQuantityProps {
   variant?: "default" | "grey";
   plusIcon?: boolean;
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;

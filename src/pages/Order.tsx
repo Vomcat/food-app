@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import styled from "styled-components";
-import { respondFrom, dimensions, breakpoints, respondTo } from "styles";
+import { respondFrom, breakpoints, respondTo } from "styles";
 
 import { RootState } from "store/store";
 

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import ButtonPlus from "components/Ui/ButtonPlus";
+import ButtonPlus from "components/Ui/ButtonQuantity";
 
 import { cartActions } from "store/cartSlice";
 
@@ -37,17 +37,14 @@ const ItemPrice = styled.div`
   margin-top: auto;
 `;
 
-const ProductItem: React.FC<ProductItemProps> = ({
-  id,
-  imageURI,
-  name,
-  price,
-}) => {
+const ProductItem = (props: ProductItemProps) => {
+  const { id, imageURI, name, price } = props;
   const dispatch = useDispatch();
 
   const addItemHandler = () => {
-    dispatch(cartActions.addItem({ name, quantity: 1, price, id }));
+    dispatch(cartActions.addItem({ name, price, id, quantity: 1 }));
   };
+
   return (
     <Item>
       <ItemImage>

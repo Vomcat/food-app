@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import { dimensions, breakpoints, respondFrom, colors } from "styles";
 
 import { RootState } from "store/store";
+import { cartActions } from "store/cartSlice";
 
 import { FormConfimationProps } from "interfaces/Form";
 
@@ -108,6 +109,8 @@ const FormConfirmation = (props: FormConfimationProps) => {
 
   const [stateOfFetch, setStateOfFetch] = useState(false);
 
+  const dispatch = useDispatch();
+
   const orderItems = useSelector((state: RootState) => state.items);
   const orderTotalPrice = useSelector((state: RootState) => state.totalAmount);
 
@@ -144,6 +147,7 @@ const FormConfirmation = (props: FormConfimationProps) => {
 
   const redirectHendler = () => {
     navigate("/");
+    dispatch(cartActions.removeAllItems());
   };
 
   if (!error && stateOfFetch)
@@ -180,12 +184,14 @@ const FormConfirmation = (props: FormConfimationProps) => {
         </FormDataWrapper>
         <OrderData>
           <OrderSummary>
-            {orderItems.map((item) => (
+            {orderItems.map(({ id, name, quantity, totalPrice, price }) => (
               <FormConfirmationItem
-                key={item.id}
-                name={item.name}
-                quantity={item.quantity}
-                totalPrice={item.totalPrice}
+                key={id}
+                id={id}
+                name={name}
+                quantity={quantity}
+                totalPrice={totalPrice}
+                price={price}
               />
             ))}
             <OrderSummaryPrice>Total: ${orderTotalPrice}</OrderSummaryPrice>

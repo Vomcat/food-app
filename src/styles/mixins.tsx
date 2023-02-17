@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { colors, fonts } from "./variables";
+import { colors, fonts, dimensions } from "./variables";
 
 export const respondFrom = (breakpoints: number) => {
   return (literals: TemplateStringsArray, ...placeholders: any[]) =>
@@ -26,7 +26,7 @@ export const baseShadow = css`
 export const errorText = css`
   color: ${colors.red};
   text-decoration: underline;
-  font-size: 14px;
+  font-size: ${dimensions.fonts.small};
   font-family: ${fonts.secondary};
   cursor: pointer;
 

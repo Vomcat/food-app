@@ -1,9 +1,10 @@
-import { useState, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 
 import { Props } from "interfaces/Ui";
 
-const ReactPortal: React.FC<Props> = ({ children }) => {
+const ReactPortal = (props: Props) => {
+  const { children } = props;
+
   const element = document.getElementById("overlay-root") as HTMLElement;
 
   return createPortal(children, element);

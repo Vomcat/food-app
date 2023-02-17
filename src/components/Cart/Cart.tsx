@@ -1,15 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-
-import { RootState } from "store/store";
-
-import { cartActions } from "store/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
-
-import CartItem from "./CartItem";
-
-import { CartStyleProps } from "interfaces/Cart";
-
 import {
   respondFrom,
   breakpoints,
@@ -19,13 +11,32 @@ import {
   colors,
 } from "styles";
 
-const CartWrapper = styled.div<Pick<CartStyleProps, "variant">>`
+import { RootState } from "store/store";
+import { cartActions } from "store/cartSlice";
+
+import { CartProps } from "interfaces/Cart";
+
+import CartItem from "./CartItem";
+import Button from "components/Ui/Button";
+
+const CartWrapper = styled.div<Pick<CartProps, "variant">>`
   display: flex;
   flex-direction: column;
   gap: ${dimensions.spacing.md}px;
+
   ${(props) =>
     props.variant === "menu" &&
-    `position: absolute; top: 42px; right:0; padding: 50px; width:500px;  background-color: ${colors.white}; border-bottom-left-radius:17px; border-bottom-right-radius:17px;`}
+    `
+      position: absolute;
+      top: 26px;
+      right:0;
+      padding: ${dimensions.spacing.md}px;
+      width:400px;
+      max-width:100%;
+      background-color: ${colors.white};
+      border-bottom-left-radius:17px;
+      border-bottom-right-radius:17px;
+    `}
 `;
 
 const HeaderWrapper = styled.div`
@@ -65,7 +76,11 @@ const SummaryText = styled.p`
   font-size: ${dimensions.fonts.medium}px;
 `;
 
-const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
+const Cart = (props: CartProps) => {
+  const { variant, items, onMouseEnter, onMouseLeave } = props;
+
+  const navigate = useNavigate();
+
   const totalPrice = useSelector((state: RootState) => state.totalAmount);
   const dispatch = useDispatch();
 
@@ -73,8 +88,17 @@ const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
     dispatch(cartActions.removeAllItems());
   };
 
+  const redirectHendler = () => {
+    navigate("/order");
+    onMouseLeave && onMouseLeave();
+  };
+
   return (
-    <CartWrapper variant={variant}>
+    <CartWrapper
+      variant={variant}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <HeaderWrapper>
         <h3>Shopping Cart</h3>
         {items.length > 0 && (
@@ -85,14 +109,14 @@ const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
       </HeaderWrapper>
       <CartItemWrapper>
         {items.length > 0
-          ? items.map((item) => (
+          ? items.map(({ id, name, price, totalPrice, quantity }) => (
               <CartItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                price={item.price}
-                totalPrice={item.totalPrice}
-                quantity={item.quantity}
+                key={id}
+                id={id}
+                name={name}
+                price={price}
+                totalPrice={totalPrice}
+                quantity={quantity}
               />
             ))
           : "Cart is empty"}
@@ -101,6 +125,9 @@ const Cart: React.FC<CartStyleProps> = ({ variant, items }) => {
         <SummaryText>Total:</SummaryText>
         <SummaryText>{totalPrice.toFixed(2)}$</SummaryText>
       </SummaryBlock>
+      {variant === "menu" && (
+        <Button clickHandler={redirectHendler}>Order</Button>
+      )}
     </CartWrapper>
   );
 };

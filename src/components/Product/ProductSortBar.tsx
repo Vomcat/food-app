@@ -1,14 +1,14 @@
-import PageContentContainer from "components/Ui/PageContentContainer";
-
 import styled from "styled-components";
-
 import { baseShadow, colors } from "styles";
+
+import { ProductSortBarProps } from "interfaces/Product";
 
 const SearchBarWrapper = styled.div`
   ${baseShadow};
   display: flex;
   justify-content: space-between;
   padding: 21px 0;
+  overflow: hidden;
 `;
 
 const SearchBarLeftElements = styled.div`
@@ -40,7 +40,9 @@ const TextElement = styled.div`
   }
 `;
 
-const ProductSearchBar = () => {
+const ProductSortBar = (props: ProductSortBarProps) => {
+  const { changeHandler } = props;
+
   return (
     <SearchBarWrapper>
       <SearchBarLeftElements>
@@ -50,15 +52,15 @@ const ProductSearchBar = () => {
         <TextElement>Noodle</TextElement>
       </SearchBarLeftElements>
       <SearchBarRightElements>
-        <SelectElement name="Sort by">
-          <option>Default sorting</option>
-          <option>Alphabetic</option>
-          <option>Lowest price</option>
-          <option>Biggest price</option>
+        <SelectElement name="Sort by" defaultValue={0} onChange={changeHandler}>
+          <option value={0}>Default sorting</option>
+          <option value={1}>Alphabetical</option>
+          <option value={2}>Lowest price</option>
+          <option value={3}>Highest price</option>
         </SelectElement>
       </SearchBarRightElements>
     </SearchBarWrapper>
   );
 };
 
-export default ProductSearchBar;
+export default ProductSortBar;

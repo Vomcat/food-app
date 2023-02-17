@@ -3,7 +3,9 @@ import renderer from "react-test-renderer";
 import "jest-styled-components";
 import "@testing-library/jest-dom";
 
-import ButtonPlus from "components/Ui/ButtonPlus";
+import { colors } from "styles";
+
+import ButtonPlus from "components/Ui/ButtonQuantity";
 
 describe("ButtonPlus component", () => {
   test("Button render plus", () => {
@@ -16,12 +18,13 @@ describe("ButtonPlus component", () => {
     const testImage = document.querySelector("img") as HTMLImageElement;
     expect(testImage.alt).toContain("minus icon");
   });
-  test("button minus bg-color", () => {
-    const tree = renderer.create(<ButtonPlus variant="grey" />).toJSON();
-    expect(tree).toHaveStyleRule("background-color", "#D9D9D9");
+
+  test("Button default bg-color", () => {
+    const tree = renderer.create(<ButtonPlus />).toJSON();
+    expect(tree).toHaveStyleRule("background-color", colors.secondary);
   });
   test("button minus bg-color", () => {
     const tree = renderer.create(<ButtonPlus variant="grey" />).toJSON();
-    expect(tree).toHaveStyleRule("background-color", "#D9D9D9");
+    expect(tree).toHaveStyleRule("background-color", colors.lightGrey);
   });
 });
