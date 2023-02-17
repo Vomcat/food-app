@@ -4,7 +4,7 @@ import "jest-styled-components";
 
 import { colors } from "styles";
 
-import ButtonPlus from "components/Ui/ButtonPlus";
+import ButtonPlus from "components/Ui/ButtonQuantity";
 
 describe("ButtonPlus component", () => {
   test("Button render plus", () => {

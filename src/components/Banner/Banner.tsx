@@ -1,15 +1,14 @@
 import styled from "styled-components";
-
-import PageContentContainer from "components/Ui/PageContentContainer";
-
 import {
   breakpoints,
   colors,
   fonts,
   respondFrom,
   respondTo,
-  dimensions
+  dimensions,
 } from "styles";
+
+import PageContentContainer from "components/Ui/PageContentContainer";
 
 import FoodImage from "assets/images/BannerImage.png";
 import FoodImageMobile from "assets/images/BannerImageMobile.png";

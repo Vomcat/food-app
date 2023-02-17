@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { respondFrom, breakpoints, dimensions } from "styles";
 
 import { SectionProps } from "interfaces/Ui";
-
-import { respondFrom, breakpoints, dimensions } from "styles";
 
 const Wrapper = styled.section`
   padding: ${dimensions.spacing.md}px 0;

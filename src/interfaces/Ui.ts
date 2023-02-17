@@ -8,7 +8,7 @@ export interface ButtonProps extends Props {
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export interface ButtonPlusProps {
+export interface ButtonQuantityProps {
   variant?: "default" | "grey";
   plusIcon?: boolean;
   clickHandler?: React.MouseEventHandler<HTMLButtonElement>;

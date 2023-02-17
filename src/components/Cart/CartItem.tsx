@@ -14,7 +14,7 @@ import { cartActions } from "store/cartSlice";
 
 import { CartItemProps } from "interfaces/Cart";
 
-import ButtonPlus from "components/Ui/ButtonPlus";
+import ButtonQuantity from "components/Ui/ButtonQuantity";
 
 const CartItemWrapper = styled.div`
   display: grid;
@@ -52,13 +52,9 @@ const ItemCountNumber = styled.p`
   font-family: ${fonts.secondary};
 `;
 
-const CartItem: React.FC<CartItemProps> = ({
-  name,
-  price,
-  quantity,
-  id,
-  totalPrice,
-}) => {
+const CartItem = (props: CartItemProps) => {
+  const { name, price, quantity, id, totalPrice } = props;
+
   const dispatch = useDispatch();
 
   const addItemHandler = () => {
@@ -66,11 +62,11 @@ const CartItem: React.FC<CartItemProps> = ({
   };
 
   const removeItemHandler = () => {
-    dispatch(cartActions.removeItemInstance(id));
+    dispatch(cartActions.removeItemEntry(id));
   };
 
   const removeOneItemHandler = () => {
-    dispatch(cartActions.removeItemEntry(id));
+    dispatch(cartActions.removeItemInstance(id));
   };
 
   return (
@@ -79,9 +75,9 @@ const CartItem: React.FC<CartItemProps> = ({
       <ItemText>${totalPrice.toFixed(2)}</ItemText>
       <ItemRemove onClick={removeOneItemHandler}>Remove</ItemRemove>
       <ItemCount>
-        <ButtonPlus variant="grey" clickHandler={addItemHandler} />
+        <ButtonQuantity variant="grey" clickHandler={addItemHandler} />
         <ItemCountNumber>{quantity}</ItemCountNumber>
-        <ButtonPlus
+        <ButtonQuantity
           variant="grey"
           plusIcon={false}
           clickHandler={removeItemHandler}

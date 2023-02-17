@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { respondFrom, breakpoints, dimensions } from "styles";
 
 import { Props } from "interfaces/Ui";
-
-import { respondFrom, breakpoints, dimensions } from "styles";
 
 const Wrapper = styled.div`
   padding: 0 ${dimensions.spacing.md}px;
@@ -14,8 +13,10 @@ const Wrapper = styled.div`
     `}
 `;
 
-const PageContentContainer: React.FC<Props> = (props) => {
-  return <Wrapper>{props.children}</Wrapper>;
+const PageContentContainer = (props: Props) => {
+  const { children } = props;
+
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default PageContentContainer;

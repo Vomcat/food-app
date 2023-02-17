@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonPlusProps } from "interfaces/Ui";
+import { ButtonQuantityProps } from "interfaces/Ui";
 
 import { colors } from "styles";
 
@@ -8,7 +8,7 @@ import PlusIconWhite from "assets/images/plus.png";
 import PlusIconBlack from "assets/images/plusBlack.png";
 import MinusIconBlack from "assets/images/minus.png";
 
-const Button = styled.button<Omit<ButtonPlusProps, "addItem">>`
+const Button = styled.button<Omit<ButtonQuantityProps, "addItem">>`
   position: relative;
   border: none;
   cursor: pointer;
@@ -28,11 +28,9 @@ const Button = styled.button<Omit<ButtonPlusProps, "addItem">>`
   }
 `;
 
-const ButtonPlus: React.FC<ButtonPlusProps> = ({
-  variant = "default",
-  plusIcon = true,
-  clickHandler,
-}) => {
+const ButtonQuantity = (props: ButtonQuantityProps) => {
+  const { variant = "default", plusIcon = true, clickHandler } = props;
+
   return (
     <Button variant={variant} type="button" onClick={clickHandler}>
       {plusIcon ? (
@@ -47,4 +45,4 @@ const ButtonPlus: React.FC<ButtonPlusProps> = ({
   );
 };
 
-export default ButtonPlus;
+export default ButtonQuantity;

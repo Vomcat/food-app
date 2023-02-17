@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { colors, dimensions, fonts } from "styles";
 
 import { ButtonProps } from "interfaces/Ui";
-import { colors, dimensions, fonts } from "styles";
 
 const ButtonMain = styled.button<ButtonProps>`
   cursor: pointer;
@@ -22,8 +22,9 @@ const ButtonMain = styled.button<ButtonProps>`
   }
 `;
 
-const Button: React.FC<ButtonProps> = (props) => {
+const Button = (props: ButtonProps) => {
   const { type, clickHandler, children, color = "default" } = props;
+
   return (
     <ButtonMain onClick={clickHandler} type={type} color={color}>
       {children}

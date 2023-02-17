@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import {
@@ -16,6 +17,7 @@ import { cartActions } from "store/cartSlice";
 import { CartProps } from "interfaces/Cart";
 
 import CartItem from "./CartItem";
+import Button from "components/Ui/Button";
 
 const CartWrapper = styled.div<Pick<CartProps, "variant">>`
   display: flex;
@@ -76,11 +78,19 @@ const SummaryText = styled.p`
 
 const Cart = (props: CartProps) => {
   const { variant, items, onMouseEnter, onMouseLeave } = props;
+
+  const navigate = useNavigate();
+
   const totalPrice = useSelector((state: RootState) => state.totalAmount);
   const dispatch = useDispatch();
 
   const removeAllItemsHandler = () => {
     dispatch(cartActions.removeAllItems());
+  };
+
+  const redirectHendler = () => {
+    navigate("/order");
+    onMouseLeave && onMouseLeave();
   };
 
   return (
@@ -115,6 +125,9 @@ const Cart = (props: CartProps) => {
         <SummaryText>Total:</SummaryText>
         <SummaryText>{totalPrice.toFixed(2)}$</SummaryText>
       </SummaryBlock>
+      {variant === "menu" && (
+        <Button clickHandler={redirectHendler}>Order</Button>
+      )}
     </CartWrapper>
   );
 };
