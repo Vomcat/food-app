@@ -29,85 +29,67 @@
     {
       "orderItems": [
         {
-          "id": 1,
-          "name": "Mniam Mniam Food",
-          "price": 5,
-          "quantity": 4,
-          "totalPrice": 20
+          "id": 2,
+          "name": "Rice with garlic chicken",
+          "price": 4.2,
+          "quantity": 3,
+          "totalPrice": 12.60
         },
         {
           "id": 3,
           "name": "Spicy noodle with shrimps",
           "price": 7,
-          "quantity": 2,
-          "totalPrice": 14
-        },
-        {
-          "id": 2,
-          "name": "Rice with garlic chicken",
-          "price": 4.2,
-          "quantity": 5,
-          "totalPrice": 21
-        },
-        {
-          "id": 4,
-          "name": "Potatoe with salad and grilled beef",
-          "price": 7.5,
           "quantity": 1,
-          "totalPrice": 7.5
+          "totalPrice": 7
         }
       ],
-      "name": "dasd",
-      "lastName": "sadas",
-      "email": "koczwara.weronika@gmail.com",
-      "phoneNumber": "123123",
-      "streetAddress": "adsd",
-      "streetNumber": "13",
-      "postCode": "123",
-      "city": "Sopot",
-      "id": 1
+      "orderTotalPrice": 19.60,
+      "name": "imie",
+      "lastName": "naziwsko",
+      "email": "email@mail.com",
+      "phoneNumber": "23223124",
+      "streetAddress": "ulica",
+      "streetNumber": "12",
+      "postCode": "12345",
+      "city": "miasto",
+      "date": "2/19/2023",
+      "id": 3
     },
     {
       "orderItems": [
         {
-          "id": 1,
-          "name": "Mniam Mniam Food",
-          "price": 5,
-          "quantity": 4,
-          "totalPrice": 20
-        },
-        {
-          "id": 3,
-          "name": "Spicy noodle with shrimps",
-          "price": 7,
-          "quantity": 2,
-          "totalPrice": 14
-        },
-        {
-          "id": 2,
-          "name": "Rice with garlic chicken",
-          "price": 4.2,
-          "quantity": 5,
-          "totalPrice": 21
-        },
-        {
           "id": 4,
           "name": "Potatoe with salad and grilled beef",
           "price": 7.5,
           "quantity": 1,
           "totalPrice": 7.5
+        },
+        {
+          "id": 1,
+          "name": "Mniam Mniam Food",
+          "price": 5,
+          "quantity": 1,
+          "totalPrice": 5
+        },
+        {
+          "id": 2,
+          "name": "Rice with garlic chicken",
+          "price": 4.2,
+          "quantity": 1,
+          "totalPrice": 4.2
         }
       ],
-      "name": "dasd",
-      "lastName": "sadas",
-      "email": "koczwara.weronika@gmail.com",
-      "phoneNumber": "1234123",
-      "streetAddress": "adsd",
-      "streetNumber": "sdasd",
-      "postCode": "123",
-      "date": "5.02.2023",
-      "city": "Sopot",
-      "id": 2
+      "orderTotalPrice": 16.7,
+      "name": "we",
+      "lastName": "naziwsko",
+      "email": "email@mail.com",
+      "phoneNumber": "23223124",
+      "streetAddress": "ulica123",
+      "streetNumber": "12",
+      "postCode": "12345",
+      "city": "miasto",
+      "date": "2/19/2023",
+      "id": 4
     }
   ]
 }
