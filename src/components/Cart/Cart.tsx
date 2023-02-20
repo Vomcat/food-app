@@ -101,14 +101,14 @@ const Cart = (props: CartProps) => {
     >
       <HeaderWrapper>
         <h3>Shopping Cart</h3>
-        {items.length > 0 && (
+        {items?.length > 0 && (
           <RemoveAllText onClick={removeAllItemsHandler}>
             Remove All
           </RemoveAllText>
         )}
       </HeaderWrapper>
       <CartItemWrapper>
-        {items.length > 0
+        {items?.length > 0
           ? items.map(({ id, name, price, totalPrice, quantity }) => (
               <CartItem
                 key={id}
@@ -123,7 +123,7 @@ const Cart = (props: CartProps) => {
       </CartItemWrapper>
       <SummaryBlock>
         <SummaryText>Total:</SummaryText>
-        <SummaryText>{totalPrice.toFixed(2)}$</SummaryText>
+        <SummaryText>{totalPrice?.toFixed(2)}$</SummaryText>
       </SummaryBlock>
       {variant === "menu" && (
         <Button clickHandler={redirectHendler}>Order</Button>

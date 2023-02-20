@@ -104,7 +104,7 @@ const Navigation = () => {
           </NavigationLogo>
           <NavigationIcons>
             <CartIconStyles>
-              {cartItems.length > 0 && (
+              {cartItemsQuantity > 0 &&(
                 <NavigationItemsCounter>
                   <p>{cartItemsQuantity}</p>
                 </NavigationItemsCounter>
