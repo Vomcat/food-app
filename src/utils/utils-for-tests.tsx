@@ -40,3 +40,5 @@ const renderWithProviders = (
 
 export { renderWithProviders as render };
 export * from "@testing-library/react";
+export * from '@testing-library/jest-dom';
+
