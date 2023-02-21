@@ -1,6 +1,4 @@
 import { render, screen } from "utils/utils-for-tests";
-import '@testing-library/jest-dom'
-
 
 import Banner from "components/Banner/Banner";
 
