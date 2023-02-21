@@ -29,85 +29,24 @@
     {
       "orderItems": [
         {
-          "id": 1,
-          "name": "Mniam Mniam Food",
-          "price": 5,
-          "quantity": 4,
-          "totalPrice": 20
-        },
-        {
-          "id": 3,
-          "name": "Spicy noodle with shrimps",
-          "price": 7,
-          "quantity": 2,
-          "totalPrice": 14
-        },
-        {
           "id": 2,
           "name": "Rice with garlic chicken",
           "price": 4.2,
-          "quantity": 5,
-          "totalPrice": 21
-        },
-        {
-          "id": 4,
-          "name": "Potatoe with salad and grilled beef",
-          "price": 7.5,
-          "quantity": 1,
-          "totalPrice": 7.5
+          "quantity": 2,
+          "totalPrice": 8.4
         }
       ],
-      "name": "dasd",
-      "lastName": "sadas",
-      "email": "koczwara.weronika@gmail.com",
-      "phoneNumber": "123123",
-      "streetAddress": "adsd",
-      "streetNumber": "13",
-      "postCode": "123",
-      "city": "Sopot",
+      "orderTotalPrice": 8.4,
+      "name": "Name",
+      "lastName": "Last name",
+      "email": "Email@wp.pl",
+      "phoneNumber": "1234567",
+      "streetAddress": "Address",
+      "streetNumber": "12",
+      "postCode": "12345",
+      "city": "City",
+      "date": "2/20/2023",
       "id": 1
-    },
-    {
-      "orderItems": [
-        {
-          "id": 1,
-          "name": "Mniam Mniam Food",
-          "price": 5,
-          "quantity": 4,
-          "totalPrice": 20
-        },
-        {
-          "id": 3,
-          "name": "Spicy noodle with shrimps",
-          "price": 7,
-          "quantity": 2,
-          "totalPrice": 14
-        },
-        {
-          "id": 2,
-          "name": "Rice with garlic chicken",
-          "price": 4.2,
-          "quantity": 5,
-          "totalPrice": 21
-        },
-        {
-          "id": 4,
-          "name": "Potatoe with salad and grilled beef",
-          "price": 7.5,
-          "quantity": 1,
-          "totalPrice": 7.5
-        }
-      ],
-      "name": "dasd",
-      "lastName": "sadas",
-      "email": "koczwara.weronika@gmail.com",
-      "phoneNumber": "1234123",
-      "streetAddress": "adsd",
-      "streetNumber": "sdasd",
-      "postCode": "123",
-      "date": "5.02.2023",
-      "city": "Sopot",
-      "id": 2
     }
   ]
 }
