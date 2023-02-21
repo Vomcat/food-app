@@ -1,4 +1,3 @@
-import { render, screen } from "utils/utils-for-tests";
 import renderer from "react-test-renderer";
 import "jest-styled-components";
 
