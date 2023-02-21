@@ -94,7 +94,9 @@ const Form = () => {
         <InputsWrapper>
           <InputGroup>
             <Input placeholder="Name" type="text" {...register("name")} />
-            <InputErrorMessage>{errors.name?.message}</InputErrorMessage>
+            {errors.name && (
+              <InputErrorMessage role="alert">{errors.name.message}</InputErrorMessage>
+            )}
           </InputGroup>
           <InputGroup>
             <Input
@@ -102,13 +104,17 @@ const Form = () => {
               type="text"
               {...register("lastName")}
             />
-            <InputErrorMessage>{errors.lastName?.message}</InputErrorMessage>
+            {errors.lastName && (
+              <InputErrorMessage role="alert">{errors.lastName.message}</InputErrorMessage>
+            )}
           </InputGroup>
         </InputsWrapper>
         <InputsWrapper>
           <InputGroup>
             <Input placeholder="Email" type="email" {...register("email")} />
-            <InputErrorMessage>{errors.email?.message}</InputErrorMessage>
+            {errors.email && (
+              <InputErrorMessage role="alert">{errors.email.message}</InputErrorMessage>
+            )}
           </InputGroup>
           <InputGroup>
             <Input
@@ -116,7 +122,11 @@ const Form = () => {
               type="text"
               {...register("phoneNumber")}
             />
-            <InputErrorMessage>{errors.phoneNumber?.message}</InputErrorMessage>
+            {errors.phoneNumber && (
+              <InputErrorMessage role="alert">
+                {errors.phoneNumber.message}
+              </InputErrorMessage>
+            )}
           </InputGroup>
         </InputsWrapper>
         <InputsWrapper>
@@ -126,9 +136,11 @@ const Form = () => {
               type="text"
               {...register("streetAddress")}
             />
-            <InputErrorMessage>
-              {errors.streetAddress?.message}
-            </InputErrorMessage>
+            {errors.streetAddress && (
+              <InputErrorMessage role="alert">
+                {errors.streetAddress.message}
+              </InputErrorMessage>
+            )}
           </InputGroup>
           <InputGroup inputSize="small">
             <Input
@@ -136,15 +148,19 @@ const Form = () => {
               type="text"
               {...register("streetNumber")}
             />
-            <InputErrorMessage>
-              {errors.streetNumber?.message}
-            </InputErrorMessage>
+            {errors.streetNumber && (
+              <InputErrorMessage role="alert">
+                {errors.streetNumber.message}
+              </InputErrorMessage>
+            )}
           </InputGroup>
         </InputsWrapper>
         <InputsWrapper>
           <InputGroup inputSize="big">
             <Input placeholder="City" type="text" {...register("city")} />
-            <InputErrorMessage>{errors.city?.message}</InputErrorMessage>
+            {errors.city && (
+              <InputErrorMessage role="alert">{errors.city.message}</InputErrorMessage>
+            )}
           </InputGroup>
           <InputGroup inputSize="small">
             <Input
@@ -152,7 +168,9 @@ const Form = () => {
               type="text"
               {...register("postCode")}
             />
-            <InputErrorMessage>{errors.postCode?.message}</InputErrorMessage>
+            {errors.postCode && (
+              <InputErrorMessage role="alert">{errors.postCode.message}</InputErrorMessage>
+            )}
           </InputGroup>
         </InputsWrapper>
         <Button type="submit">Order</Button>
