@@ -28,7 +28,7 @@ const CartWrapper = styled.div<Pick<CartProps, "variant">>`
     props.variant === "menu" &&
     `
       position: absolute;
-      top: 26px;
+      top: ${dimensions.spacing.lg2}px;
       right:0;
       padding: ${dimensions.spacing.md}px;
       width:400px;

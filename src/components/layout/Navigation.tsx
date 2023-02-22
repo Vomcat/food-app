@@ -29,7 +29,6 @@ const NavigationMain = styled.nav`
   height: 50px;
   background-color: ${colors.white};
   ${baseShadow};
-  padding: ${dimensions.spacing.sm}px 0;
   z-index: 999;
 `;
 
@@ -48,8 +47,8 @@ const NavigationLogo = styled.div`
 
 const NavigationItemsCounter = styled.div`
   position: absolute;
-  top: -${dimensions.spacing.sm}px;
-  left: -${dimensions.spacing.sm}px;
+  top: ${dimensions.spacing.sm}px;
+  left: ${dimensions.spacing.xsm}px;
   width: ${dimensions.fonts.regular}px;
   height: ${dimensions.fonts.regular}px;
   border-radius: 50%;
@@ -66,22 +65,18 @@ const NavigationItemsCounter = styled.div`
 const CartIconStyles = styled.div`
   position: relative;
   height: 100%;
+  padding: 14px;
 `;
 
 const NavigationIcons = styled.div`
   position: relative;
   display: flex;
-  gap: ${dimensions.spacing.sm}px;
   cursor: pointer;
 
   img {
     height: 20px;
     width: 20px;
   }
-
-  ${respondFrom(breakpoints.desktop)`
-      gap: ${dimensions.spacing.md}px;
-`}
 `;
 
 const Navigation = () => {
@@ -103,8 +98,13 @@ const Navigation = () => {
             </Link>
           </NavigationLogo>
           <NavigationIcons>
-            <CartIconStyles>
-              {cartItemsQuantity > 0 &&(
+            <CartIconStyles onMouseEnter={() => {
+              setIsOnIcon(true);
+            }}
+              onMouseLeave={() => {
+                setIsOnIcon(false);
+              }}>
+              {cartItemsQuantity > 0 && (
                 <NavigationItemsCounter>
                   <p>{cartItemsQuantity}</p>
                 </NavigationItemsCounter>
@@ -112,18 +112,13 @@ const Navigation = () => {
               <img
                 src={ProfileIcon}
                 alt="Profile Icon"
-                onMouseEnter={() => {
-                  setIsOnIcon(true);
-                }}
-                onMouseLeave={() => {
-                  setIsOnIcon(false);
-                }}
               />
             </CartIconStyles>
-
-            <Link to="/order-history">
-              <img src={CartIcon} alt="Cart Icon" />
-            </Link>
+            <CartIconStyles>
+              <Link to="/order-history">
+                <img src={CartIcon} alt="Cart Icon" />
+              </Link>
+            </CartIconStyles>
           </NavigationIcons>
           {(isOnIcon || isOnCart) && (
             <Cart
