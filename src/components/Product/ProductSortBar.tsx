@@ -11,13 +11,6 @@ const SearchBarWrapper = styled.div`
   overflow: hidden;
 `;
 
-const SearchBarLeftElements = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
-const SearchBarRightElements = styled.div``;
-
 const SelectElement = styled.select`
   display: block;
   cursor: pointer;
@@ -45,20 +38,12 @@ const ProductSortBar = (props: ProductSortBarProps) => {
 
   return (
     <SearchBarWrapper>
-      <SearchBarLeftElements>
-        <TextElement>All products</TextElement>
-        <TextElement>Vege</TextElement>
-        <TextElement>With Rice</TextElement>
-        <TextElement>Noodle</TextElement>
-      </SearchBarLeftElements>
-      <SearchBarRightElements>
         <SelectElement name="Sort by" defaultValue={0} onChange={changeHandler}>
           <option value={0}>Default sorting</option>
           <option value={1}>Alphabetical</option>
           <option value={2}>Lowest price</option>
           <option value={3}>Highest price</option>
         </SelectElement>
-      </SearchBarRightElements>
     </SearchBarWrapper>
   );
 };
