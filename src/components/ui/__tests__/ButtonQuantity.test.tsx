@@ -13,6 +13,7 @@ describe("ButtonQuantity component", () => {
     const testImage = document.querySelector("img") as HTMLImageElement;
     expect(testImage.alt).toContain("plus icon");
   });
+
   test("Button render minus", () => {
     render(<ButtonQuantity plusIcon={false} />);
     const testImage = document.querySelector("img") as HTMLImageElement;
@@ -23,6 +24,7 @@ describe("ButtonQuantity component", () => {
     const tree = renderer.create(<ButtonQuantity />).toJSON();
     expect(tree).toHaveStyleRule("background-color", colors.secondary);
   });
+  
   test("button minus bg-color", () => {
     const tree = renderer.create(<ButtonQuantity variant="grey" />).toJSON();
     expect(tree).toHaveStyleRule("background-color", colors.lightGrey);

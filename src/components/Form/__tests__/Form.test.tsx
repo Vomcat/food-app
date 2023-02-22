@@ -2,7 +2,7 @@ import { render, screen, fireEvent, waitFor } from "utils/utils-for-tests";
 
 import Form from "components/Form/Form";
 
-describe("Navigation component", () => {
+describe("Form component", () => {
   test("Render errors when value is invalid", async () => {
     render(<Form />);
     fireEvent.submit(screen.getByRole("button"));
@@ -62,6 +62,5 @@ describe("Navigation component", () => {
 
     fireEvent.submit(screen.getByRole("button"));
     await waitFor(() => expect(screen.queryAllByRole("alert")).toHaveLength(0));
-
   });
 });

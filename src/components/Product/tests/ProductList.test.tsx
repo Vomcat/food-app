@@ -4,7 +4,7 @@ import ProductList from "components/Product/ProductList";
 
 import { MOCK_DATA_PRODUCTS } from "mocks/mockedData";
 
-describe("Product List render test", () => {
+describe("ProductList component", () => {
   test("Products list renders correctly", async () => {
     const { asFragment } = render(<ProductList />);
 
@@ -14,7 +14,6 @@ describe("Product List render test", () => {
   });
 
   test("Products list renders correctly", async () => {
-     render(<ProductList />);
-
+    render(<ProductList />);
   });
 });
