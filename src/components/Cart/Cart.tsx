@@ -57,7 +57,7 @@ const CartItemWrapper = styled.div`
 
   ${respondFrom(breakpoints.tablet)`
     max-height: 194px;
-    overflow-y: scroll;
+    overflow-y: auto;
   `}
 `;
 
