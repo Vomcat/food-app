@@ -125,7 +125,7 @@ const Cart = (props: CartProps) => {
         <SummaryText>Total:</SummaryText>
         <SummaryText>{totalPrice?.toFixed(2)}$</SummaryText>
       </SummaryBlock>
-      {variant === "menu" && (
+      {variant === "menu" && items?.length > 0 && (
         <Button clickHandler={redirectHendler}>Order</Button>
       )}
     </CartWrapper>

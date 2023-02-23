@@ -39,7 +39,7 @@ const OrderItem = (props: OrderItemProps) => {
   return (
     <OrderListStyle>
       <h3>
-        {date} {orderTotalPrice}
+        {date} {orderTotalPrice}$
       </h3>
       <p>{itemsMap}</p>
     </OrderListStyle>

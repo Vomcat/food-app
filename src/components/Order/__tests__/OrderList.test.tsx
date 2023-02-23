@@ -7,7 +7,7 @@ describe("Order component", () => {
   test("Order data renders correctly", async () => {
     const { asFragment } = render(<OrderList />);
 
-    await screen.findByText(MOCK_DATA_ORDERS[0].orderTotalPrice);
+    await screen.findByText(`${MOCK_DATA_ORDERS[0].orderTotalPrice}$`);
 
     expect(asFragment()).toMatchSnapshot();
   });

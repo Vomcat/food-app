@@ -6,37 +6,7 @@ exports[`Order component Order data renders correctly 1`] = `
     class="sc-bcXHqe kZTUrz"
   >
     <h3>
-       13
-    </h3>
-    <p>
-      Mniam Mniam Food x 4: 20$,  Spicy noodle with shrimps x 2: 14$
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Product List render test Order data renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-bcXHqe kZTUrz"
-  >
-    <h3>
-       13
-    </h3>
-    <p>
-      Mniam Mniam Food x 4: 20$,  Spicy noodle with shrimps x 2: 14$
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Product List render test renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-bcXHqe kZTUrz"
-  >
-    <h3>
-       13
+       13$
     </h3>
     <p>
       Mniam Mniam Food x 4: 20$,  Spicy noodle with shrimps x 2: 14$

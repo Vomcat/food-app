@@ -47,6 +47,85 @@
       "city": "City",
       "date": "2/20/2023",
       "id": 1
+    },
+    {
+      "orderItems": [
+        {
+          "id": 2,
+          "name": "Rice with garlic chicken",
+          "price": 4.2,
+          "quantity": 1,
+          "totalPrice": 4.2
+        },
+        {
+          "id": 4,
+          "name": "Potatoe with salad and grilled beef",
+          "price": 7.5,
+          "quantity": 1,
+          "totalPrice": 7.5
+        },
+        {
+          "id": 1,
+          "name": "Mniam Mniam Food",
+          "price": 5,
+          "quantity": 3,
+          "totalPrice": 15
+        }
+      ],
+      "orderTotalPrice": 26.7,
+      "name": "imie1123213213",
+      "lastName": "naziwsko",
+      "email": "email@mail.com",
+      "phoneNumber": "23223124",
+      "streetAddress": "ulica",
+      "streetNumber": "12",
+      "postCode": "12345",
+      "city": "miasto",
+      "date": "2/22/2023",
+      "id": 2
+    },
+    {
+      "orderItems": [
+        {
+          "id": 4,
+          "name": "Potatoe with salad and grilled beef",
+          "price": 7.5,
+          "quantity": 3,
+          "totalPrice": 22.5
+        },
+        {
+          "id": 1,
+          "name": "Mniam Mniam Food",
+          "price": 5,
+          "quantity": 1,
+          "totalPrice": 5
+        },
+        {
+          "id": 2,
+          "name": "Rice with garlic chicken",
+          "price": 4.2,
+          "quantity": 1,
+          "totalPrice": 4.2
+        },
+        {
+          "id": 3,
+          "name": "Spicy noodle with shrimps",
+          "price": 7,
+          "quantity": 1,
+          "totalPrice": 7
+        }
+      ],
+      "orderTotalPrice": 38.7,
+      "name": "we",
+      "lastName": "naziwsko",
+      "email": "email@mail.com",
+      "phoneNumber": "23223124",
+      "streetAddress": "ulica",
+      "streetNumber": "12",
+      "postCode": "12345",
+      "city": "miasto",
+      "date": "2/22/2023",
+      "id": 3
     }
   ]
 }

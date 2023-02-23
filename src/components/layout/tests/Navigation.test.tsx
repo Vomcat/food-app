@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from "utils/utils-for-tests";
 import Navigation from "components/layout/Navigation";
 
 describe("Navigation component", () => {
-  test("On mouseEnter show cart", async () => {
+  test("On mouseEnter on icon and hide cart", async () => {
     render(<Navigation />);
 
     const button  = screen.getByRole('img', {

@@ -1,363 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Product List render test Products list renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-bcXHqe SGnSj"
-  >
-    <div
-      class="sc-gswNZR kPaHeg"
-    >
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        All products
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        Vege
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        With Rice
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        Noodle
-      </div>
-    </div>
-    <div
-      class="sc-dkrFOg"
-    >
-      <select
-        class="sc-hLBbgP dQkBqY"
-        name="Sort by"
-      >
-        <option
-          selected=""
-          value="0"
-        >
-          Default sorting
-        </option>
-        <option
-          value="1"
-        >
-          Alphabetical
-        </option>
-        <option
-          value="2"
-        >
-          Lowest price
-        </option>
-        <option
-          value="3"
-        >
-          Highest price
-        </option>
-      </select>
-    </div>
-  </div>
-  <div
-    class="sc-jrcTuL iPswSW"
-  >
-    <div
-      class="sc-gKPRtg gDXMDe"
-    >
-      <div
-        class="sc-iBYQkv"
-      >
-        <img
-          alt="Mniam Mniam Food"
-        />
-      </div>
-      <p
-        class="sc-ftTHYK kbjnVZ"
-      >
-        Mniam Mniam Food
-      </p>
-      <div
-        class="sc-pyfCe irkFcR"
-      >
-        <p
-          class="sc-ftTHYK kbjnVZ"
-        >
-          5 $
-        </p>
-        <button
-          class="sc-jSUZER feGusg"
-          type="button"
-        >
-          <img
-            alt="plus icon"
-            src="plus.png"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="sc-gKPRtg gDXMDe"
-    >
-      <div
-        class="sc-iBYQkv"
-      >
-        <img
-          alt="Mniam Mniam Food as adsdasdasd"
-        />
-      </div>
-      <p
-        class="sc-ftTHYK kbjnVZ"
-      >
-        Mniam Mniam Food as adsdasdasd
-      </p>
-      <div
-        class="sc-pyfCe irkFcR"
-      >
-        <p
-          class="sc-ftTHYK kbjnVZ"
-        >
-          5 $
-        </p>
-        <button
-          class="sc-jSUZER feGusg"
-          type="button"
-        >
-          <img
-            alt="plus icon"
-            src="plus.png"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Product List render test renders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-bcXHqe SGnSj"
-  >
-    <div
-      class="sc-gswNZR kPaHeg"
-    >
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        All products
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        Vege
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        With Rice
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
-      >
-        Noodle
-      </div>
-    </div>
-    <div
-      class="sc-dkrFOg"
-    >
-      <select
-        class="sc-hLBbgP dQkBqY"
-        name="Sort by"
-      >
-        <option
-          selected=""
-          value="0"
-        >
-          Default sorting
-        </option>
-        <option
-          value="1"
-        >
-          Alphabetical
-        </option>
-        <option
-          value="2"
-        >
-          Lowest price
-        </option>
-        <option
-          value="3"
-        >
-          Highest price
-        </option>
-      </select>
-    </div>
-  </div>
-  <div
-    class="sc-jrcTuL iPswSW"
-  >
-    <div
-      class="sc-gKPRtg gDXMDe"
-    >
-      <div
-        class="sc-iBYQkv"
-      >
-        <img
-          alt="Mniam Mniam Food"
-        />
-      </div>
-      <p
-        class="sc-ftTHYK kbjnVZ"
-      >
-        Mniam Mniam Food
-      </p>
-      <div
-        class="sc-pyfCe irkFcR"
-      >
-        <p
-          class="sc-ftTHYK kbjnVZ"
-        >
-          5 $
-        </p>
-        <button
-          class="sc-jSUZER feGusg"
-          type="button"
-        >
-          <img
-            alt="plus icon"
-            src="plus.png"
-          />
-        </button>
-      </div>
-    </div>
-    <div
-      class="sc-gKPRtg gDXMDe"
-    >
-      <div
-        class="sc-iBYQkv"
-      >
-        <img
-          alt="Mniam Mniam Food as adsdasdasd"
-        />
-      </div>
-      <p
-        class="sc-ftTHYK kbjnVZ"
-      >
-        Mniam Mniam Food as adsdasdasd
-      </p>
-      <div
-        class="sc-pyfCe irkFcR"
-      >
-        <p
-          class="sc-ftTHYK kbjnVZ"
-        >
-          5 $
-        </p>
-        <button
-          class="sc-jSUZER feGusg"
-          type="button"
-        >
-          <img
-            alt="plus icon"
-            src="plus.png"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`ProductList component Products list renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="sc-bcXHqe SGnSj"
   >
-    <div
-      class="sc-gswNZR kPaHeg"
+    <select
+      class="sc-gswNZR hnRSQm"
+      name="Sort by"
     >
-      <div
-        class="sc-eDvSVe hpfhfX"
+      <option
+        selected=""
+        value="0"
       >
-        All products
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
+        Default sorting
+      </option>
+      <option
+        value="1"
       >
-        Vege
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
+        Alphabetical
+      </option>
+      <option
+        value="2"
       >
-        With Rice
-      </div>
-      <div
-        class="sc-eDvSVe hpfhfX"
+        Lowest price
+      </option>
+      <option
+        value="3"
       >
-        Noodle
-      </div>
-    </div>
-    <div
-      class="sc-dkrFOg"
-    >
-      <select
-        class="sc-hLBbgP dQkBqY"
-        name="Sort by"
-      >
-        <option
-          selected=""
-          value="0"
-        >
-          Default sorting
-        </option>
-        <option
-          value="1"
-        >
-          Alphabetical
-        </option>
-        <option
-          value="2"
-        >
-          Lowest price
-        </option>
-        <option
-          value="3"
-        >
-          Highest price
-        </option>
-      </select>
-    </div>
+        Highest price
+      </option>
+    </select>
   </div>
   <div
-    class="sc-jrcTuL iPswSW"
+    class="sc-ftTHYK iKvzqA"
   >
     <div
-      class="sc-gKPRtg gDXMDe"
+      class="sc-eDvSVe gIeMic"
     >
       <div
-        class="sc-iBYQkv"
+        class="sc-jSUZER"
       >
         <img
           alt="Mniam Mniam Food"
         />
       </div>
       <p
-        class="sc-ftTHYK kbjnVZ"
+        class="sc-gKPRtg csZcBY"
       >
         Mniam Mniam Food
       </p>
       <div
-        class="sc-pyfCe irkFcR"
+        class="sc-iBYQkv kzNpzW"
       >
         <p
-          class="sc-ftTHYK kbjnVZ"
+          class="sc-gKPRtg csZcBY"
         >
           5 $
         </p>
         <button
-          class="sc-jSUZER feGusg"
+          class="sc-hLBbgP iGGqbO"
           type="button"
         >
           <img
@@ -368,30 +70,30 @@ exports[`ProductList component Products list renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-gKPRtg gDXMDe"
+      class="sc-eDvSVe gIeMic"
     >
       <div
-        class="sc-iBYQkv"
+        class="sc-jSUZER"
       >
         <img
           alt="Mniam Mniam Food as adsdasdasd"
         />
       </div>
       <p
-        class="sc-ftTHYK kbjnVZ"
+        class="sc-gKPRtg csZcBY"
       >
         Mniam Mniam Food as adsdasdasd
       </p>
       <div
-        class="sc-pyfCe irkFcR"
+        class="sc-iBYQkv kzNpzW"
       >
         <p
-          class="sc-ftTHYK kbjnVZ"
+          class="sc-gKPRtg csZcBY"
         >
           5 $
         </p>
         <button
-          class="sc-jSUZER feGusg"
+          class="sc-hLBbgP iGGqbO"
           type="button"
         >
           <img

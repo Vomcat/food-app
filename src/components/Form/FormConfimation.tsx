@@ -194,7 +194,7 @@ const FormConfirmation = (props: FormConfimationProps) => {
                 price={price}
               />
             ))}
-            <OrderSummaryPrice>Total: ${orderTotalPrice}</OrderSummaryPrice>
+            <OrderSummaryPrice>Total: ${orderTotalPrice.toFixed(2)}</OrderSummaryPrice>
           </OrderSummary>
         </OrderData>
       </Wrapper>
