@@ -23,7 +23,7 @@ const ModalMain = styled.div`
   height: 98%;
   background-color: ${colors.white};
   padding: ${dimensions.spacing.md3}px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   ${respondFrom(breakpoints.tablet)`
