@@ -18,15 +18,10 @@ exports[`ProductList component Products list renders correctly 1`] = `
       <option
         value="1"
       >
-        Alphabetical
-      </option>
-      <option
-        value="2"
-      >
         Lowest price
       </option>
       <option
-        value="3"
+        value="2"
       >
         Highest price
       </option>
