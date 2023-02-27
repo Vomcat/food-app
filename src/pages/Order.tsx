@@ -33,10 +33,14 @@ const Order = () => {
     <Section styles="fullHeight">
       <PageContentContainer>
         <h1>Checkout</h1>
-        <OrderWrapper>
-          <Form />
-          <Cart variant="default" items={cartItems} />
-        </OrderWrapper>
+        {cartItems?.length === 0 ? (
+          <h2>To create an order fist add some items to your cart</h2>
+        ) : (
+          <OrderWrapper>
+            <Form />
+            <Cart variant="default" items={cartItems} />
+          </OrderWrapper>
+        )}
       </PageContentContainer>
     </Section>
   );
