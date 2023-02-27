@@ -35,7 +35,10 @@ const ProductList = () => {
     try {
       const response = await fetch(" http://localhost:3000/items");
       const data = await response.json();
-      setItems(data);
+      const sortedData = data.sort((a: ProductItemProps, b: ProductItemProps) =>
+        a.name.localeCompare(b.name)
+      );
+      setItems(sortedData);
     } catch (err) {
       throw new Error("Something went wrong");
     }
@@ -51,10 +54,8 @@ const ProductList = () => {
 
     copyArray.sort((a: ProductItemProps, b: ProductItemProps) => {
       return sortDirection === "0"
-        ? a.id - b.id
-        : sortDirection === "1"
         ? a.name.localeCompare(b.name)
-        : sortDirection === "2"
+        : sortDirection === "1"
         ? a.price - b.price
         : b.price - a.price;
     });

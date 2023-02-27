@@ -40,9 +40,8 @@ const ProductSortBar = (props: ProductSortBarProps) => {
     <SearchBarWrapper>
         <SelectElement name="Sort by" defaultValue={0} onChange={changeHandler}>
           <option value={0}>Default sorting</option>
-          <option value={1}>Alphabetical</option>
-          <option value={2}>Lowest price</option>
-          <option value={3}>Highest price</option>
+          <option value={1}>Lowest price</option>
+          <option value={2}>Highest price</option>
         </SelectElement>
     </SearchBarWrapper>
   );
